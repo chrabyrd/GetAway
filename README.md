@@ -13,7 +13,7 @@ Using LeaveNow, users will be able to:
 - [ ] See a detailed view of specific information after selecting a trip,
 - [ ] Access an airline's booking page through this detailed view.
 
-##Technologies & Technical Challenges
+## Technologies & Technical Challenges
 
 There will be three pages:
   - Splash/loading page
@@ -28,7 +28,7 @@ The primary technical challenges will be:
 
 The user will select a max price, return date, and airport. The app will send a request to the Skyscanner API (adding the current date and time). It will then parse the returned data to only include flights within the next 12 hours.
 
-##Group Members & Work Breakdown
+## Group Members & Work Breakdown
 
 Our group consists of three members: Craig Scott, Chris Bryd, Maria Belgrader
 
@@ -49,16 +49,15 @@ Maria's primary responsibilities will be:
   - Setting up pages and routes
   - Index page with styling
 
-##Implementation Timeline
+## Implementation Timeline
 
 **Day 1**: Setup environment & select color scheme (Team Day)
-  Basic Setup:
+  - Basic Setup
     - React
     - React Native
     - Webpack
     - Redux
-
-  Choose Color Scheme:
+  - Choose Color Scheme:
     - Each person picks a splash image and color palatte
 
 **Day 2**: Setup API, state, and pages
@@ -74,12 +73,11 @@ Maria's primary responsibilities will be:
   - Show (CB)
   - Splash/Loading (T)
 
-**Day 4**: Team meeting to finish up features and launch to ios/andriod stores
-  9am Team Meeting
-    - Styling
-    - Error handling
-    - Wrap up outstanding features
-    - Push to the App Store and Google Play
+**Day 4**: 9am Team meeting to finish up features and launch to ios/andriod stores
+  - Styling
+  - Error handling
+  - Wrap up outstanding features
+  - Push to the App Store and Google Play
 
 **Day 5**: Final touches and bonus features (Team Day)
   - Polish and look for bugs
