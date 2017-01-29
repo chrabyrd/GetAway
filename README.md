@@ -19,7 +19,6 @@ Using LeaveNow, users will be able to:
 
 The primary technical challenges will be:
  - Parsing the api data to display the relevant flights
- - Using geolocation to find the nearby airports
  - Storing the search results in the state to limit api requests when viewing the details of different options
  - Only displaying flights departing within the next 12 hours of the current time
 
@@ -49,6 +48,7 @@ Maria's primary responsibilities will be:
 **Day 5**:
 
 **Bonus Features (TBD)**:
+  - [ ] Geolocation
   - [ ] Weather of destination
   - [ ] Optional no layover
   - [ ] Images of destination
