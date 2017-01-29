@@ -46,7 +46,10 @@ Maria's primary responsibilities will be:
   - Setup webpack
 
 **Day 2**:
-  - Connect Skyscanner api
+  - Setup Skyscanner api
+  - Setup state
+  - Setup pages
+  - 
 
 **Day 3**:
 
