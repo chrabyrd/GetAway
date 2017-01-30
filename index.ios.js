@@ -12,6 +12,8 @@ import {
   View
 } from 'react-native';
 
+import App from './components/app';
+
 export default class LeaveNow extends Component {
   render() {
     return (
@@ -26,6 +28,7 @@ export default class LeaveNow extends Component {
           Press Cmd+R to reload,{'\n'}
           Cmd+D or shake for dev menu
         </Text>
+        <App/>
       </View>
     );
   }
