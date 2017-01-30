@@ -13,6 +13,13 @@ Using LeaveNow, users will be able to:
 - [ ] See a detailed view of specific information after selecting a trip,
 - [ ] Access an airline's booking page through this detailed view.
 
+##WireFrames
+
+![splash](docs/wireframes/Splash_load.png)
+![home screen](docs/wireframes/home screen.png)
+![Index](docs/wireframes/Index.png)
+![Show Page](docs/wireframes/Show Page.png)
+
 ##Technologies & Technical Challenges
 
 There will be three pages:
