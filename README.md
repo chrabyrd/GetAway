@@ -13,6 +13,7 @@ Using LeaveNow, users will be able to:
 - [ ] See a detailed view of specific information after selecting a trip,
 - [ ] Access an airline's booking page through this detailed view.
 
+<<<<<<< HEAD
 ##WireFrames
 
 ![splash](docs/wireframes/Splash_load.png)
@@ -21,49 +22,81 @@ Using LeaveNow, users will be able to:
 ![Show Page](docs/wireframes/Show Page.png)
 
 ##Technologies & Technical Challenges
+=======
+## Technologies & Technical Challenges
+>>>>>>> 98f818a5175d0c694f6eb42d5b3bfcd99adb6a3b
 
 There will be three pages:
- - Splash/loading page
- - Home: receive user input
- - Flight Index: list of all relevant flights
- - Flight Show: flight details
+  - Splash/loading page
+  - Home: receive user input
+  - Flight Index: list of all relevant flights
+  - Flight Show: flight details
 
 The primary technical challenges will be:
- - Parsing the api data to display the relevant flights
- - Storing the search results in the state to limit api requests when viewing the details of different options
- - Only displaying flights departing within the next 12 hours of the current time
+  - Parsing the api data to display the relevant flights
+  - Storing the search results in the state to limit api requests when viewing the details of different options
+  - Only displaying flights departing within the next 12 hours of the current time
 
- The user will select a max price, return date, and airport. The app will send a request to the Skyscanner API (adding the current date and time). It will then parse the returned data to only include flights within the next 12 hours.
+The user will select a max price, return date, and airport. The app will send a request to the Skyscanner API (adding the current date and time). It will then parse the returned data to only include flights within the next 12 hours.
 
+## Group Members & Work Breakdown
 
-##Group Members & Work Breakdown
+Our group consists of three members: Craig Scott, Chris Bryd, Maria Belgrader
 
-Our group consists of three members: Craig Scott, Christopher Byrd, Maria Belgrader
+Each team member will be responsible for:
+  - Researching and understanding the Skyscanner API
+  - Selecting a splash/loading image and color palatte
 
-Craigs' primary responsibilities will be:
+Craigs's primary responsibilities will be:
+  - Setting up the Skyscanner API
+  - Researching geolocation with Skyscanner (zipcode)
+  - Home page with styling
 
-Chris' primary responsibilities will be:
+Chris's primary responsibilities will be:
+  - Setting up the application state
+  - Show page with styling
 
 Maria's primary responsibilities will be:
+  - Setting up pages and routes
+  - Index page with styling
 
 ## Implementation Timeline
 
-**Day 1**:
-  - Setup React Native
-  - Setup webpack
+**Day 1**: Setup environment & select color scheme (Team Day)
+  - Basic Setup
+    - React
+    - React Native
+    - Webpack
+    - Redux
+  - Choose Color Scheme:
+    - Each person picks a splash image and color palatte
 
-**Day 2**:
-  - Connect Skyscanner api
+**Day 2**: Setup API, state, and pages
+  - Get familiar with Skyscanner API (T)
+  - Setup API (CS)
+    - Research geolocation Skyscanner option(zipcode)
+  - Setup application state (CB)
+  - Setup pages (MB)
 
-**Day 3**:
+**Day 3**: Build out pages with details and style
+  - Home (CS)
+  - Index (MB)
+  - Show (CB)
+  - Splash/Loading (T)
 
-**Day 4**:
+**Day 4**: 9am Team meeting to finish up features and launch to ios/andriod stores
+  - Styling
+  - Error handling
+  - Wrap up outstanding features
+  - Push to the App Store and Google Play
 
-**Day 5**:
+**Day 5**: Final touches and bonus features (Team Day)
+  - Polish and look for bugs
+  - Decide on bonus features and begin implementation
 
 **Bonus Features (TBD)**:
-  - [ ] Geolocation to find nearest airports
   - [ ] Weather of destination
+  - [ ] Geolocation to find all nearby airports
   - [ ] Optional no layover
   - [ ] Images of destination
   - [ ] Cesium globe on show page with pin for destination
