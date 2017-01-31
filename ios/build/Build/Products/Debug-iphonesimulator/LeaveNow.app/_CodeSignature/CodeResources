@@ -6,7 +6,7 @@
 	<dict>
 		<key>Base.lproj/LaunchScreen.nib</key>
 		<data>
-		hqU3Oiy3JcDyUr0OjCQ9P1CoONk=
+		quf/pUX3+Iz5sOKHPObBz6Cu1cU=
 		</data>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
 		<data>
@@ -215,7 +215,7 @@
 		</data>
 		<key>PlugIns/LeaveNowTests.xctest/LeaveNowTests</key>
 		<data>
-		Q7l52xwe7tYeetTAmwP47ReNyBU=
+		BBC/bqJsHFPDLznOJFCC4pze20M=
 		</data>
 		<key>PlugIns/LeaveNowTests.xctest/_CodeSignature/CodeResources</key>
 		<data>
@@ -228,11 +228,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			hqU3Oiy3JcDyUr0OjCQ9P1CoONk=
+			quf/pUX3+Iz5sOKHPObBz6Cu1cU=
 			</data>
 			<key>hash2</key>
 			<data>
-			AQ8eZ/2T5FBHIkNgtzj0QnotWcmLIvAhzEu5GmZdIcg=
+			tsSjPsI7nbK0ouuisqajXl75DHRc1Rhpl8H9NJdsnKI=
 			</data>
 		</dict>
 		<key>Frameworks/IDEBundleInjection.framework/IDEBundleInjection</key>
@@ -774,11 +774,11 @@
 		<dict>
 			<key>hash</key>
 			<data>
-			Q7l52xwe7tYeetTAmwP47ReNyBU=
+			BBC/bqJsHFPDLznOJFCC4pze20M=
 			</data>
 			<key>hash2</key>
 			<data>
-			wHOvIMzDHOA7hwHOOl4TloueCTOWHZIfIY/YafypVOg=
+			deom3fxYAHgGCooLqLf8PGVrL93uoOeMvRUGyFGLmYE=
 			</data>
 		</dict>
 		<key>PlugIns/LeaveNowTests.xctest/_CodeSignature/CodeResources</key>

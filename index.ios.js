@@ -9,17 +9,20 @@ import {
   AppRegistry,
   StyleSheet,
   Text,
-  View
+  View,
+  NavigatorIOS,
+  TouchableHighlight
 } from 'react-native';
 
-import App from './components/app';
+// import Search from './components/Search';
+// import FlightIndex from './components/FlightIndex';
+// import FlightShow from './components/FlightShow';
+import App from './components/App';
 
 export default class LeaveNow extends Component {
   render() {
     return (
-      <View style={styles.container}>
-        <App />
-      </View>
+      <App />
     );
   }
 }
@@ -30,17 +33,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
-  },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  }
 });
 
 AppRegistry.registerComponent('LeaveNow', () => LeaveNow);

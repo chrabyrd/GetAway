@@ -12,7 +12,7 @@ import {
   View
 } from 'react-native';
 
-import App from './components/app';
+import App from './components/App';
 
 export default class LeaveNow extends Component {
   render() {
