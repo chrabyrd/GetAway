@@ -1,6 +1,2 @@
 dependencies: \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/ReactCommon/yoga/yoga/Yoga.c \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/ReactCommon/yoga/yoga/YGNodeList.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/ReactCommon/yoga/yoga/YGMacros.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/ReactCommon/yoga/yoga/Yoga.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/ReactCommon/yoga/yoga/YGEnums.h
+  /Users/WDS/app_academys/Leave_Now/node_modules/react-native/ReactCommon/yoga/yoga/Yoga.c
