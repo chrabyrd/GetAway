@@ -18,7 +18,7 @@ export default class LeaveNow extends Component {
   render() {
     return (
       <View style={styles.container}>
-        <App/>
+        <App />
       </View>
     );
   }

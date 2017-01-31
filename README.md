@@ -64,9 +64,7 @@ Maria's primary responsibilities will be:
 
 **Day 1**: Setup environment & select color scheme (Team Day)
   - Basic Setup
-    - React
     - React Native
-    - Webpack
     - Redux
   - Choose Color Scheme:
     - Each person picks a splash image and color palatte
