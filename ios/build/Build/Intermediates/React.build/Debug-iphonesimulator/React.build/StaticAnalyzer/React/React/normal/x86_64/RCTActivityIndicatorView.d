@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTActivityIndicatorView.m \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTActivityIndicatorView.h
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Views/RCTActivityIndicatorView.m \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Views/RCTActivityIndicatorView.h

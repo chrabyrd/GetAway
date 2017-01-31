@@ -1,22 +1,22 @@
 dependencies: \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTTabBar.m \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTTabBar.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Base/RCTEventDispatcher.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Base/RCTBridge.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Base/RCTBridgeModule.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Base/RCTFrameUpdate.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Base/RCTInvalidating.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Base/RCTLog.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Base/RCTAssert.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTTabBarItem.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTComponent.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Base/RCTUtils.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTView.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTBorderStyle.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTPointerEvents.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTViewControllerProtocol.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTWrapperViewController.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Views/UIView+React.h
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Views/RCTTabBar.m \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Views/RCTTabBar.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Base/RCTEventDispatcher.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Base/RCTBridge.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Base/RCTBridgeDelegate.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Base/RCTJavaScriptLoader.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Base/RCTBridgeModule.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Base/RCTFrameUpdate.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Base/RCTInvalidating.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Base/RCTLog.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Base/RCTAssert.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Views/RCTTabBarItem.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Views/RCTComponent.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Base/RCTUtils.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Views/RCTView.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Views/RCTBorderStyle.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Views/RCTPointerEvents.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Views/RCTViewControllerProtocol.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Views/RCTWrapperViewController.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Views/UIView+React.h

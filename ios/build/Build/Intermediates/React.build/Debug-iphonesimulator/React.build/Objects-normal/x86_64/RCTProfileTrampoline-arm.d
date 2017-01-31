@@ -1,4 +1,4 @@
 dependencies: \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Profiler/RCTProfileTrampoline-arm.S \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Profiler/RCTMacros.h
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Profiler/RCTProfileTrampoline-arm.S \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Profiler/RCTMacros.h

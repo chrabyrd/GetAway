@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Profiler/RCTFPSGraph.m \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Profiler/RCTFPSGraph.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Base/RCTDefines.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Base/RCTAssert.h
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Profiler/RCTFPSGraph.m \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Profiler/RCTFPSGraph.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Base/RCTDefines.h \
+  /Users/computer/Documents/Workspace/Leave-Now/node_modules/react-native/React/Base/RCTAssert.h
