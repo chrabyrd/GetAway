@@ -1,22 +1,11 @@
-/**
- * Sample React Native App
- * https://github.com/facebook/react-native
- * @flow
- */
-
 import React, { Component } from 'react';
 import {
   AppRegistry,
   StyleSheet,
   Text,
-  View,
-  NavigatorIOS,
-  TouchableHighlight
+  View
 } from 'react-native';
 
-// import Search from './components/Search';
-// import FlightIndex from './components/FlightIndex';
-// import FlightShow from './components/FlightShow';
 import App from './components/App';
 
 export default class LeaveNow extends Component {
