@@ -1,2 +1,2 @@
-dependencies: /Users/maria/Desktop/Leave-Now/ios/LeaveNow/main.m \
-  /Users/maria/Desktop/Leave-Now/ios/LeaveNow/AppDelegate.h
+dependencies: /Users/WDS/Desktop/Leave-Now/ios/LeaveNow/main.m \
+  /Users/WDS/Desktop/Leave-Now/ios/LeaveNow/AppDelegate.h

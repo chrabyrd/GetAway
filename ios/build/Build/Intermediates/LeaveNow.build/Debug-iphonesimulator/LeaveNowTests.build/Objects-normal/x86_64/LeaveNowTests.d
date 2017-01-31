@@ -1,5 +1,5 @@
 dependencies: \
-  /Users/maria/Desktop/Leave-Now/ios/LeaveNowTests/LeaveNowTests.m \
+  /Users/WDS/Desktop/Leave-Now/ios/LeaveNowTests/LeaveNowTests.m \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Modules/module.modulemap \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCUIRemote.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCUIKeyboardKeys.h \
@@ -29,13 +29,13 @@ dependencies: \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestErrors.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTestDefines.h \
   /Applications/Xcode.app/Contents/Developer/Platforms/iPhoneSimulator.platform/Developer/Library/Frameworks/XCTest.framework/Headers/XCTest.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTRootView.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridge.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeDelegate.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTJavaScriptLoader.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTFrameUpdate.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTInvalidating.h

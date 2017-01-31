@@ -1,3 +1,3 @@
 dependencies: \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTMapAnnotation.m \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTMapAnnotation.h
+  /Users/WDS/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTMapAnnotation.m \
+  /Users/WDS/Desktop/Leave-Now/node_modules/react-native/React/Views/RCTMapAnnotation.h

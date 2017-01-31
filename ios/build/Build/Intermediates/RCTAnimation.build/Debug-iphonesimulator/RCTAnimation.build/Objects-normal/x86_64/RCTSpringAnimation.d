@@ -1,19 +1,19 @@
 dependencies: \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTSpringAnimation.m \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTSpringAnimation.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTAnimationDriver.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
-  /Users/maria/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/Libraries/NativeAnimation/RCTAnimationUtils.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h \
-  /Users/maria/Desktop/Leave-Now/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h
+  /Users/WDS/Desktop/Leave-Now/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTSpringAnimation.m \
+  /Users/WDS/Desktop/Leave-Now/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTSpringAnimation.h \
+  /Users/WDS/Desktop/Leave-Now/node_modules/react-native/Libraries/NativeAnimation/Drivers/RCTAnimationDriver.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBridgeModule.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTDefines.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTConvert.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/Yoga.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGEnums.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/yoga/YGMacros.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAnimationType.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTBorderStyle.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTLog.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTAssert.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTPointerEvents.h \
+  /Users/WDS/Desktop/Leave-Now/ios/build/Build/Products/Debug-iphonesimulator/include/React/RCTTextDecorationLineType.h \
+  /Users/WDS/Desktop/Leave-Now/node_modules/react-native/Libraries/NativeAnimation/RCTAnimationUtils.h \
+  /Users/WDS/Desktop/Leave-Now/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTValueAnimatedNode.h \
+  /Users/WDS/Desktop/Leave-Now/node_modules/react-native/Libraries/NativeAnimation/Nodes/RCTAnimatedNode.h
