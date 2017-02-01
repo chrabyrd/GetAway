@@ -1,26 +1,10 @@
-// CB PREVIOUS MERGE
-// import React from 'react';
-// import { Text, StyleSheet, View } from 'react-native';
-// import { Provider } from 'react-redux';
-// import FlightIndexContainer from './flights/flightIndexContainer';
-// import FlightDetailContainer from './flights/flightDetailContainer';
-// import configureStore from '../store/store';
-//
-// const App = () => {
-//   const store = configureStore();
-//   return (
-//     <Provider store={store}>
-//       <FlightIndexContainer />
-//     </Provider>
-//   );
-// };
-
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Navigator, TouchableHighlight } from 'react-native';
-
+import { Provider } from 'react-redux';
 import Home from './home/home';
-import FlightIndex from './flights/flightIndex';
-import FlightDetail from './flights/flightDetail';
+import FlightIndexContainer from './flights/flightIndexContainer';
+import FlightDetailContainer from './flights/flightDetailContainer';
+import configureStore from '../store/store';
 
 class App extends Component {
   renderScene(route, navigator) {
@@ -28,18 +12,22 @@ class App extends Component {
       case 'Home':
         return (<Home navigator={navigator} />);
       case 'FlightIndex':
-        return (<FlightIndex navigator={navigator}  />);
+        return (<FlightIndexContainer navigator={navigator}  />);
       case 'FlightDetail':
-        return (<FlightDetail navigator={navigator}  />);
+        return (<FlightDetailContainer navigator={navigator}  />);
     }
   }
 
   render() {
+    const store = configureStore();
     return (
-      <Navigator
-        style={{ flex:1 }}
-        initialRoute={{ name: 'Home' }}
-        renderScene={ this.renderScene } />
+      <Provider store={store}>
+        <Navigator
+          style={{ flex:1 }}
+          initialRoute={{ name: 'Home' }}
+          renderScene={ this.renderScene }
+        />
+      </Provider>
     );
   }
 }

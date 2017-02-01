@@ -11,8 +11,9 @@ class FlightDetail extends Component {
   }
 
   componentDidMount() {
+    this.state.flight = this.props.fetchFlight();
     console.log(this.state);
-    console.log(this.props);
+    console.log();
   }
 
   _navigate(){
