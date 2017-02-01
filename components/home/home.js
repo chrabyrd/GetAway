@@ -32,9 +32,7 @@ class Home extends Component {
 
 
   onButtonPress() {
-    console.log(this.state);
-    debugger;
-    api.getFlights(destination, this.state.returnDate);
+  
   };
 
 
