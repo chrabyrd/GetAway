@@ -1,5 +1,5 @@
-import React, {component} from 'react';
-import {AppRegistry, StyleSheets, Text, View} from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, StyleSheet, Navigator, TouchableHighlight } from 'react-native';
 
 import api from '../../utilities/api';
 
@@ -11,23 +11,46 @@ class Home extends Component {
       flights: []
     };
   }
-    componentWillMount(){
-      api.getFlights.then((res) => {
-        this.setState({
-          flights: res
-        });
-      });
-    };
 
+  // componentWillMount(){
+  //   api.getFlights.then((res) => {
+  //     this.setState({
+  //       flights: res
+  //     });
+  //   });
+  // }
+
+  _navigate(){
+    this.props.navigator.push({
+      name: 'FlightIndex'
+    });
+  }
 
   render() {
     console.log("flights: ", this.state.flights);
-    return(
-      <View>
-        <Text>home</Text>
+
+    return (
+      <View style={styles.container}>
+        <Text>Home Page</Text>
+          <TouchableHighlight style={styles.button} onPress={ () => this._navigate() }>
+              <Text>Get Flying</Text>
+          </TouchableHighlight>
       </View>
     );
   }
 }
+
+  const styles = StyleSheet.create({
+    container: {
+      flex: 1,
+      justifyContent: 'center',
+      alignItems: 'center',
+      backgroundColor: '#F5FCFF',
+    },
+    button: {
+      borderWidth: 1,
+      backgroundColor: '#9ad3de'
+    }
+  });
 
 export default Home;

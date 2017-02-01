@@ -6,7 +6,7 @@ import {
   View
 } from 'react-native';
 
-import App from './components/App';
+import App from './components/app';
 
 export default class LeaveNow extends Component {
   render() {

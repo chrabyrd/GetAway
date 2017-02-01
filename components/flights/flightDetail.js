@@ -1,7 +1,7 @@
-import React from 'react';
-import { Text, StyleSheet, View } from 'react-native';
+import React, { Component } from 'react';
+import { View, Text, StyleSheet, Navigator, TouchableHighlight } from 'react-native';
 
-class FlightDetail extends React.Component {
+class FlightDetail extends Component {
   constructor(props) {
     super(props);
 
@@ -15,12 +15,19 @@ class FlightDetail extends React.Component {
     console.log(this.props);
   }
 
+  _navigate(){
+    this.props.navigator.push({
+      name: 'FlightIndex',
+    });
+  }
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>
-          I am the flight details.
-        </Text>
+        <Text>Show Flight Details</Text>
+          <TouchableHighlight style={styles.button} onPress={ () => this._navigate() }>
+              <Text>Back To Flights</Text>
+          </TouchableHighlight>
       </View>
     );
   }
@@ -33,16 +40,10 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     backgroundColor: '#F5FCFF',
   },
-  welcome: {
-    fontSize: 20,
-    textAlign: 'center',
-    margin: 10,
-  },
-  instructions: {
-    textAlign: 'center',
-    color: '#333333',
-    marginBottom: 5,
-  },
+  button: {
+    borderWidth: 1,
+    backgroundColor: '#9ad3de'
+  }
 });
 
 export default FlightDetail;

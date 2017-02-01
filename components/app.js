@@ -18,19 +18,19 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Navigator, TouchableHighlight } from 'react-native';
 
-import Search from './Search';
-import FlightIndex from './FlightIndex';
-import FlightShow from './FlightShow';
+import Home from './home/home';
+import FlightIndex from './flights/flightIndex';
+import FlightDetail from './flights/flightDetail';
 
 class App extends Component {
   renderScene(route, navigator) {
     switch (route.name) {
-      case 'Search':
-        return (<Search navigator={navigator} />);
+      case 'Home':
+        return (<Home navigator={navigator} />);
       case 'FlightIndex':
         return (<FlightIndex navigator={navigator}  />);
-      case 'FlightShow':
-        return (<FlightShow navigator={navigator}  />);
+      case 'FlightDetail':
+        return (<FlightDetail navigator={navigator}  />);
     }
   }
 
@@ -38,7 +38,7 @@ class App extends Component {
     return (
       <Navigator
         style={{ flex:1 }}
-        initialRoute={{ name: 'Search' }}
+        initialRoute={{ name: 'Home' }}
         renderScene={ this.renderScene } />
     );
   }
