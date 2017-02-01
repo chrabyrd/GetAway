@@ -17,6 +17,6 @@ export const fetchFlights = () => dispatch => (
   "Flight index data goes here"
 );
 
-export const fetchFlight = id => dispatch => (
+export const fetchFlight = () => dispatch => (
   dispatch(receiveFlight("hello"))
 );
