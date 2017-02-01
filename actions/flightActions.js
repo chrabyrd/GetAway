@@ -1,4 +1,4 @@
-// import * as FlightUtil from '../util/flightUtil';
+import api from '../util/api';
 
 export const RECEIVE_FLIGHTS = 'RECEIVE_FLIGHTS';
 export const RECEIVE_FLIGHT = 'RECEIVE_FLIGHT';
@@ -18,5 +18,5 @@ export const fetchFlights = () => dispatch => (
 );
 
 export const fetchFlight = id => dispatch => (
-  "Flight detail data goes here"
+  dispatch(receiveFlight("hello"))
 );

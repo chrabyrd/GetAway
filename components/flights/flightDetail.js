@@ -6,14 +6,16 @@ class FlightDetail extends Component {
     super(props);
 
     this.state = {
-      flight: ""
+      minPrice: 381,
+      direct: true,
+      outboundLeg: {},
+      inboundLeg: {},
+      quoteDateTime: {}
     };
   }
 
   componentDidMount() {
-    this.state.flight = this.props.fetchFlight();
-    console.log(this.state);
-    console.log(this.props.flightDetail);
+    this.props.fetchFlight();
   }
 
   _navigate(){

@@ -5,15 +5,15 @@ let api = {
      let url = `http://partners.api.skyscanner.net/apiservices/browsequotes/v1.0/US/USD/en-US/{originPlace}/{destinationPlace}/{outboundPartialDate}/{inboundPartialDate}?apiKey=cr875483709897975877477133746240`;
 
      return fetch(url).then((res) => res.json());
-   }
+   },
 
    getDetail(){
      let url = `http://partners.api.skyscanner.net/apiservices/pricing/v1.0`;
      return fetch(url, {
        method: 'POST',
        header: {
-         'Content-Type': ‘application/x-www-form-urlencoded’,
-          'Accept': ‘application/json’ or ‘application/xml’.
+         'Content-Type': 'application/x-www-form-urlencoded',
+          'Accept': 'application/json’ or ‘application/xml'
        },
        body: JSON.stringify({
         apiKey: 'cr875483709897975877477133746240',
@@ -25,7 +25,7 @@ let api = {
         outbounddate: '2017-02-02',
         inbounddate: '2017-02-07'
       })
-    }).then((detail) => detail.json())
+    }).then((detail) => detail.json());
    }
 };
 

@@ -1,8 +1,6 @@
 import React, { Component } from 'react';
 import { View, Text, StyleSheet, Navigator, TouchableHighlight } from 'react-native';
 
-import api from '../../utilities/api';
-
 class Home extends Component {
   constructor(props){
     super(props);
