@@ -32,9 +32,9 @@ class Home extends Component {
     return (
       <View style={styles.container}>
         <Text>Home Page</Text>
-          <TouchableHighlight style={styles.button} onPress={ () => this._navigate() }>
-              <Text>Get Flying</Text>
-          </TouchableHighlight>
+        <TouchableHighlight style={styles.button} onPress={ () => this._navigate() }>
+            <Text>Get Flying</Text>
+        </TouchableHighlight>
       </View>
     );
   }
