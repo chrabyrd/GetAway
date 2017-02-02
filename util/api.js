@@ -28,10 +28,16 @@ export const getSession = () =>{
  });
 };
 
-export const getDetail = () =>{
+export const getIndex = (returnDate) =>{
+  let leaveDate = new Date();
+  console.log("leave", leaveDate);
+  leaveDate.setHours(leaveDate.getHours() + 48);
+  leaveDate = leaveDate.toJSON().slice(0,10);
+  console.log("leaveDate", leaveDate);
+
   let budget = 1000;
   destinations = [];
-    fetch(`http://partners.api.skyscanner.net/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/anywhere/2017-02-04/2017-02-10?apiKey=cr875483709897975877477133746240`, {
+    fetch(`http://partners.api.skyscanner.net/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/anywhere/${leaveDate}/${returnDate}?apiKey=cr875483709897975877477133746240`, {
       method: 'get',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
