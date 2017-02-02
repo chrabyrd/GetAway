@@ -31,18 +31,6 @@ export const getSession = () =>{
 export const getDetail = () =>{
   let budget = 1000;
   destinations = [];
-  count = 0;
-  while ( count < 2){
-     let destinationPlaceOptions = ["SAN", "LAX", "LAS", "DEN", "SEA", "PDX",
-                                    "AKL", "AMS", "BLR", "CDG", "CKG", "CHP",
-                                    "CUN", "DEL", "DUB", "DUS", "DXB", "FRA",
-                                    "HEL", "LHR", "MAN", "MEX", "MUC", "NAN",
-                                    "NRT", "PEK", "PTY", "PVG", "PVR", "SIN",
-                                    "SJD", "SYD", "TAO", "TLV", "TPE", "TXL",
-                                    "YEG", "YUL", "YVR", "YYZ", "ZRH", "CVG"
-                                    ];
-    // DEST = destinationPlaceOptions[(Math.floor(Math.random() * destinationPlaceOptions.length))];
-    DEST = destinationPlaceOptions[count];
     console.log(DEST);
     fetch(`http://partners.api.skyscanner.net/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/anywhere/2017-02-04/2017-02-07?apiKey=cr875483709897975877477133746240`, {
       method: 'get',
@@ -68,7 +56,7 @@ export const getDetail = () =>{
       console.log(error);
     });
     count += 1;
-  }
+
   return destinations;
 };
 
