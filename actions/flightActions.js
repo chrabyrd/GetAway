@@ -1,4 +1,4 @@
-import { getSession, getDetail } from '../util/api';
+import { getIndex } from '../util/api';
 
 export const RECEIVE_FLIGHTS = 'RECEIVE_FLIGHTS';
 export const RECEIVE_FLIGHT = 'RECEIVE_FLIGHT';
@@ -14,7 +14,7 @@ const receiveFlight = flight => ({
 });
 
 export const fetchFlights = () => dispatch => (
-  console.log(getDetail())
+  getIndex("2017-02-11").then(data => data.json().then(o => console.log(o)))
 );
 
 export const fetchFlight = () => dispatch => (
