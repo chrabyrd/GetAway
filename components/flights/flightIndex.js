@@ -51,10 +51,12 @@ class FlightIndex extends Component {
 
   _renderFlightRow(flight) {
     return (
-      <View style={styles.flightRow}>
-        <Text style={styles.place}>{flight.city}, {flight.country}</Text>
-        <Text style={styles.price}>{flight.price}</Text>
-      </View>
+      <TouchableHighlight onPress={ () => this._navigate() }>
+        <View style={styles.flightRow}>
+          <Text style={styles.place}>{flight.city}, {flight.country}</Text>
+          <Text style={styles.price}>{flight.price}</Text>
+        </View>
+      </TouchableHighlight>
     );
   }
 
@@ -63,13 +65,13 @@ class FlightIndex extends Component {
     console.log(this.props.flightIndex);
     return (
       <View style={styles.container}>
-        <TouchableHighlight onPress={ () => this._navigate() }>
+
           <ListView
             style={{marginTop: 40}}
             dataSource={this.state.flightsDataSource}
             renderRow={(flight) => { return this._renderFlightRow(flight) ;}}
           />
-        </TouchableHighlight>
+
       </View>
     );
   }
