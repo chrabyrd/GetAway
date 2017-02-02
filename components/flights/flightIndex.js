@@ -11,8 +11,7 @@ class FlightIndex extends Component {
   }
 
   componentDidMount() {
-    this.state.flights = this.props.fetchFlights();
-    // console.log(this.state);
+    this.props.fetchFlights();
   }
 
   _navigate(){
