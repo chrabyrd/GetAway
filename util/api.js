@@ -31,7 +31,6 @@ export const getSession = () =>{
 export const getDetail = () =>{
   let budget = 1000;
   destinations = [];
-    console.log(DEST);
     fetch(`http://partners.api.skyscanner.net/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/anywhere/2017-02-04/2017-02-07?apiKey=cr875483709897975877477133746240`, {
       method: 'get',
       headers: {
