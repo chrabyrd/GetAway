@@ -18,5 +18,5 @@ export const fetchFlights = () => dispatch => (
 );
 
 export const fetchFlight = () => dispatch => (
-  dispatch(receiveFlight("hello"))
+  ""
 );
