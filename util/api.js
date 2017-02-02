@@ -55,7 +55,6 @@ export const getDetail = () =>{
     .catch((error) => {
       console.log(error);
     });
-    count += 1;
 
   return destinations;
 };
