@@ -14,7 +14,7 @@ const receiveFlight = flight => ({
 });
 
 export const fetchFlights = () => dispatch => (
-  console.log(getDetail())
+  console.log("actions", getDetail())
 );
 
 export const fetchFlight = id => dispatch => (
