@@ -1,4 +1,4 @@
-import api from '../util/api';
+import { getSession, getDetail } from '../util/api';
 
 export const RECEIVE_FLIGHTS = 'RECEIVE_FLIGHTS';
 export const RECEIVE_FLIGHT = 'RECEIVE_FLIGHT';
@@ -14,7 +14,7 @@ const receiveFlight = flight => ({
 });
 
 export const fetchFlights = () => dispatch => (
-  "Flight index data goes here"
+  console.log(getDetail())
 );
 
 export const fetchFlight = () => dispatch => (
