@@ -44,7 +44,7 @@ export const getDetail = () =>{
     // DEST = destinationPlaceOptions[(Math.floor(Math.random() * destinationPlaceOptions.length))];
     DEST = destinationPlaceOptions[count];
     console.log(DEST);
-    fetch(`http://partners.api.skyscanner.net/apiservices/browsedates/v1.0/US/USD/en-US/SFO/${DEST}/2017-02-04/2017-02-07?apiKey=cr875483709897975877477133746240`, {
+    fetch(`http://partners.api.skyscanner.net/apiservices/browseroutes/v1.0/US/USD/en-US/SFO/anywhere/2017-02-04/2017-02-07?apiKey=cr875483709897975877477133746240`, {
       method: 'get',
       headers: {
         'Content-Type': 'application/x-www-form-urlencoded',
@@ -56,7 +56,7 @@ export const getDetail = () =>{
     .then((detailJson) => {
 
       console.log("detail", detailJson);
-      console.log("quote", detailJson.Quotes );
+      console.log("quote", detailJson.Quotes);
       if ( detailJson.Quotes.length > 0 ){
         destinations.push("hi",detailJson);
       }
