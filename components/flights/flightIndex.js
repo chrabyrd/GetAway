@@ -1,12 +1,40 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Navigator, TouchableHighlight } from 'react-native';
+import {
+  View,
+  Text,
+  StyleSheet,
+  Navigator,
+  TouchableHighlight,
+  ListView
+} from 'react-native';
+
+import IndexRow from './indexRow';
+
+const flights = [{
+    city: 'Milan',
+    country: 'Italy',
+    price: '$700'
+  },
+  {
+    city: 'Amsterdam',
+    country: 'Netherlands',
+    price: '$550'
+  },
+  {
+    city: 'London',
+    country: 'England',
+    price: '$500'
+  }
+];
 
 class FlightIndex extends Component {
   constructor(props) {
     super(props);
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
     this.state = {
-      flights: ""
+      flights: "",
+      flightsDataSource: ds.cloneWithRows(flights)
     };
   }
 
@@ -21,13 +49,27 @@ class FlightIndex extends Component {
     });
   }
 
+  _renderFlightRow(flight) {
+    return (
+      <View style={styles.flightRow}>
+        <Text style={styles.place}>{flight.city}, {flight.country}</Text>
+        <Text style={styles.price}>{flight.price}</Text>
+      </View>
+    );
+  }
+
   render() {
+
+    console.log(this.props.flightIndex);
     return (
       <View style={styles.container}>
-        <Text>List of Flights</Text>
-          <TouchableHighlight style={styles.button} onPress={ () => this._navigate() }>
-            <Text>Choose Flight</Text>
-          </TouchableHighlight>
+        <TouchableHighlight onPress={ () => this._navigate() }>
+          <ListView
+            style={{marginTop: 40}}
+            dataSource={this.state.flightsDataSource}
+            renderRow={(flight) => { return this._renderFlightRow(flight) ;}}
+          />
+        </TouchableHighlight>
       </View>
     );
   }
@@ -43,7 +85,22 @@ const styles = StyleSheet.create({
   button: {
     borderWidth: 1,
     backgroundColor: '#9ad3de'
+  },
+  flightRow: {
+    padding: 20,
+    flexDirection: 'row',
+    justifyContent: 'space-between',
+    borderBottomWidth: 1,
+    borderBottomColor: '#dcdcdc'
+  },
+  place: {
+    // color: 'slategray'
+    paddingRight: 100
+  },
+  price: {
+    color: 'gray'
   }
+
 });
 
 export default FlightIndex;
