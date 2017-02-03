@@ -1,22 +1,16 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Navigator, TouchableHighlight } from 'react-native';
+import { View, Text, StyleSheet, Navigator, TouchableHighlight, TextInput } from 'react-native';
+import DatePicker from 'react-native-datepicker';
 
 class Home extends Component {
   constructor(props){
     super(props);
 
     this.state = {
-      flights: []
+      flights: [],
+      budget: "0"
     };
   }
-
-  // componentWillMount(){
-  //   api.getFlights.then((res) => {
-  //     this.setState({
-  //       flights: res
-  //     });
-  //   });
-  // }
 
   _navigate(){
     this.props.navigator.push({
@@ -25,9 +19,41 @@ class Home extends Component {
   }
 
   render() {
+    console.log("flights: ", this.state.flights);
+
     return (
       <View style={styles.container}>
-        <Text>Home Page</Text>
+        <Text>Leave Now</Text>
+        <TextInput
+          placeholder="Budget"
+          keyboardType = 'numeric'
+          onChangeText={(budget) => this.setState({budget})}
+          value={this.state.budget}
+          style={styles.budget}
+        />
+        <DatePicker
+          style={styles.date}
+          date={this.state.returnDate}
+          mode="date"
+          placeholder="select date"
+          format="YYYY-MM-DD"
+          minDate= "new Date().toJSON().slice(0,10);"
+          maxDate="2017-12-31"
+          confirmBtnText="Confirm"
+          cancelBtnText="Cancel"
+          customStyles={{
+            dateIcon: {
+              position: 'absolute',
+              left: 0,
+              top: 4,
+              marginLeft: 0
+            },
+            dateInput: {
+              marginLeft: 36
+            }
+        }}
+        onDateChange={(date) => {this.setState({returnDate: date});}}
+      />
         <TouchableHighlight style={styles.button} onPress={ () => this._navigate() }>
             <Text>Get Flying</Text>
         </TouchableHighlight>
@@ -39,13 +65,25 @@ class Home extends Component {
   const styles = StyleSheet.create({
     container: {
       flex: 1,
+      flexDirection: 'column',
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: '#F5FCFF',
-    },
+        },
     button: {
       borderWidth: 1,
       backgroundColor: '#9ad3de'
+    },
+    budget: {
+      height: 40,
+      borderColor: 'gray',
+      borderWidth: 1,
+      width: 175,
+      marginLeft: 120
+      
+          },
+    date: {
+      width: 200
     }
   });
 
