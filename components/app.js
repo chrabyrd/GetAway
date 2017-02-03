@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import { Text, View, StyleSheet, Navigator, TouchableHighlight } from 'react-native';
 import { Provider } from 'react-redux';
-import Home from './home/home';
+import HomeContainer from './home/homeContainer';
 import FlightIndexContainer from './flights/flightIndexContainer';
 import FlightDetailContainer from './flights/flightDetailContainer';
 import configureStore from '../store/store';
@@ -10,7 +10,7 @@ class App extends Component {
   renderScene(route, navigator) {
     switch (route.name) {
       case 'Home':
-        return (<Home navigator={navigator} />);
+        return (<HomeContainer navigator={navigator} />);
       case 'FlightIndex':
         return (<FlightIndexContainer navigator={navigator}  />);
       case 'FlightDetail':
@@ -20,6 +20,7 @@ class App extends Component {
 
   render() {
     const store = configureStore();
+    window.store = store;
     return (
       <Provider store={store}>
         <Navigator
