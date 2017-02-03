@@ -14,7 +14,9 @@ const receiveFlight = flight => ({
 });
 
 export const fetchFlights = () => dispatch => (
-  getIndex("2017-02-11").then(data => data.json().then(o => console.log(o)))
+  getIndex("2017-02-11")
+  .then(data => data.json())
+  .then(flights => dispatch(receiveFlights(flights)))
 );
 
 export const fetchFlight = () => dispatch => (

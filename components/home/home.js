@@ -25,8 +25,6 @@ class Home extends Component {
   }
 
   render() {
-    console.log("flights: ", this.state.flights);
-
     return (
       <View style={styles.container}>
         <Text>Home Page</Text>
