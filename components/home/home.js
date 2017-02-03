@@ -8,19 +8,22 @@ class Home extends Component {
 
     this.state = {
       flights: [],
-      budget: "0"
+      budget: "0",
+      returnDate: ""
     };
   }
 
-  _navigate(){
+  handleSubmit() {
+    this.props.fetchFlights(this.state.returnDate);
+
     this.props.navigator.push({
       name: 'FlightIndex'
     });
+
   }
 
-  render() {
-    console.log("flights: ", this.state.flights);
 
+  render() {
     return (
       <View style={styles.container}>
         <Text>Leave Now</Text>
@@ -54,7 +57,7 @@ class Home extends Component {
         }}
         onDateChange={(date) => {this.setState({returnDate: date});}}
       />
-        <TouchableHighlight style={styles.button} onPress={ () => this._navigate() }>
+    <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
             <Text>Get Flying</Text>
         </TouchableHighlight>
       </View>
@@ -80,7 +83,7 @@ class Home extends Component {
       borderWidth: 1,
       width: 175,
       marginLeft: 120
-      
+
           },
     date: {
       width: 200

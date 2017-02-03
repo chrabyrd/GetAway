@@ -1,6 +1,6 @@
 import { connect } from 'react-redux';
 import { fetchFlights } from '../../actions/flightActions';
-import FlightIndex from './flightIndex';
+import Home from './home';
 
 const mapStateToProps = ({flightIndex}) => ({
   flightIndex
@@ -13,4 +13,4 @@ const mapDispatchToProps = dispatch => ({
 export default connect (
   mapStateToProps,
   mapDispatchToProps
-)(FlightIndex);
+)(Home);

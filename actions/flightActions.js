@@ -13,8 +13,8 @@ const receiveFlight = flight => ({
   flight
 });
 
-export const fetchFlights = () => dispatch => (
-  getIndex("2017-02-11")
+export const fetchFlights = (date) => dispatch => (
+  getIndex(date)
   .then(data => data.json())
   .then(flights => dispatch(receiveFlights(flights)))
 );

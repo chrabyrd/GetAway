@@ -14,11 +14,11 @@ export const getIndex = (returnDate) => {
 
 export const redirect = (destinationPlace, leaveDate, returnDate) => {
 
-return fetch(`http://partners.api.skyscanner.net/apiservices/referral/v1.0/US/USD/en-US/SFO/${destinationPlace}/${leaveDate}/${returnDate}?apiKey=cr875483709897975877477133746240`, {
-  method: 'get',
-  headers: {
-    'Content-Type': 'application/x-www-form-urlencoded',
-    'Accept': 'application/json'
-  },
-});
+  return fetch(`http://partners.api.skyscanner.net/apiservices/referral/v1.0/US/USD/en-US/SFO/${destinationPlace}/${leaveDate}/${returnDate}?apiKey=cr875483709897975877477133746240`, {
+    method: 'get',
+    headers: {
+      'Content-Type': 'application/x-www-form-urlencoded',
+      'Accept': 'application/json'
+    },
+  });
 };
