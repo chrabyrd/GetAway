@@ -8,33 +8,16 @@ import {
   ListView
 } from 'react-native';
 
-const flights = [{
-    city: 'Milan',
-    country: 'Italy',
-    price: '$700'
-  },
-  {
-    city: 'Amsterdam',
-    country: 'Netherlands',
-    price: '$550'
-  },
-  {
-    city: 'London',
-    country: 'England',
-    price: '$500'
-  }
-];
-
 class FlightIndex extends Component {
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
     this.state = {
       quotes: "",
       places: "",
       indexFlightInfo: "",
-      flightsDataSource: ds.cloneWithRows(flights)
+      dataSource: dataSource
     };
   }
 
@@ -46,6 +29,10 @@ class FlightIndex extends Component {
     this.state.quotes = nextProps.flightIndex.Quotes;
     this.state.places = nextProps.flightIndex.Places;
     this.parseIndexDetails();
+  }
+
+  componentDidUpdate() {
+    this.setState({ dataSource: this.state.dataSource.cloneWithRows( this.state.indexFlightInfo ) });
   }
 
   parseIndexDetails() {
@@ -82,31 +69,33 @@ class FlightIndex extends Component {
   }
 
   _navigate(){
+    // update state with choosen flight
     this.props.navigator.push({
       name: 'FlightDetail'
     });
   }
 
   _renderFlightRow(flight) {
+    const arrival = `${flight["Arrival City"]}, ${flight["Arrival Country"]}`;
     return (
       <TouchableHighlight onPress={ () => this._navigate() }>
         <View style={styles.flightRow}>
-          <Text style={styles.place}>{flight.city}, {flight.country}</Text>
-          <Text style={styles.price}>{flight.price}</Text>
+          <Text style={styles.place}>{arrival}</Text>
+          <Text style={styles.price}>{flight["Price"]}</Text>
         </View>
       </TouchableHighlight>
     );
   }
 
   render() {
-    // console.log(this.state.indexFlightInfo);
+    console.log(this.state.indexFlightInfo);
 
     return (
       <View style={styles.container}>
 
         <ListView
           style={{marginTop: 40}}
-          dataSource={this.state.flightsDataSource}
+          dataSource={this.state.dataSource}
           renderRow={(flight) => { return this._renderFlightRow(flight) ;}}
         />
 
