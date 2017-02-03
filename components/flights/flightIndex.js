@@ -8,8 +8,6 @@ import {
   ListView
 } from 'react-native';
 
-import IndexRow from './indexRow';
-
 const flights = [{
     city: 'Milan',
     country: 'Italy',
