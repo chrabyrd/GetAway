@@ -33,13 +33,54 @@ class FlightIndex extends Component {
     const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
     this.state = {
-      flights: "",
+      quotes: "",
+      places: "",
+      indexFlightInfo: "",
       flightsDataSource: ds.cloneWithRows(flights)
     };
   }
 
-  componentDidMount() {
+  componentWillMount() {
     this.props.fetchFlights();
+  }
+
+  componentWillReceiveProps(nextProps) {
+    this.state.quotes = nextProps.flightIndex.Quotes;
+    this.state.places = nextProps.flightIndex.Places;
+    this.parseIndexDetails();
+  }
+
+  parseIndexDetails() {
+    let info = [];
+    let origin;
+    let destination;
+
+    function findOrigin(place) {
+      return place.PlaceId === origin;
+    }
+
+    function findDestination(place) {
+      return place.PlaceId === destination;
+    }
+
+    for (let i = 0; i < this.state.quotes.length; i++) {
+      if (this.state.quotes && this.state.places) {
+        origin = this.state.quotes[i].InboundLeg.DestinationId;
+        destination = this.state.quotes[i].OutboundLeg.DestinationId;
+        let departDate = this.state.quotes[i].OutboundLeg.DepartureDate;
+        let minPrice = this.state.quotes[i].MinPrice;
+        info.push({
+          "Departure City": this.state.places.find(findOrigin).CityName,
+          "Departure Country": this.state.places.find(findOrigin).CountryName,
+          "Arrival City": this.state.places.find(findDestination).CityName,
+          "Arrival Country": this.state.places.find(findDestination).CountryName,
+          "Departure Date": departDate,
+          "Price": minPrice
+        });
+      }
+    }
+
+    this.state.indexFlightInfo = info;
   }
 
   _navigate(){
@@ -60,16 +101,16 @@ class FlightIndex extends Component {
   }
 
   render() {
+    // console.log(this.state.indexFlightInfo);
 
-    console.log(this.props.flightIndex);
     return (
       <View style={styles.container}>
 
-          <ListView
-            style={{marginTop: 40}}
-            dataSource={this.state.flightsDataSource}
-            renderRow={(flight) => { return this._renderFlightRow(flight) ;}}
-          />
+        <ListView
+          style={{marginTop: 40}}
+          dataSource={this.state.flightsDataSource}
+          renderRow={(flight) => { return this._renderFlightRow(flight) ;}}
+        />
 
       </View>
     );

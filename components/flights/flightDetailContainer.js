@@ -2,8 +2,8 @@ import { connect } from 'react-redux';
 import { fetchFlight, fetchFlights } from '../../actions/flightActions';
 import FlightDetail from './flightDetail';
 
-const mapStateToProps = ({flightDetail}) => ({
-  flightDetail
+const mapStateToProps = ({flightIndex}) => ({
+  flightIndex
 });
 
 const mapDispatchToProps = dispatch => ({
