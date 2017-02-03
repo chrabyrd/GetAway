@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Navigator, TouchableHighlight, TextInput } from 'react-native';
+import { View, Text, StyleSheet, Navigator, TouchableHighlight, TextInput, Linking} from 'react-native';
 import DatePicker from 'react-native-datepicker';
 
 class Home extends Component {
@@ -18,6 +18,7 @@ class Home extends Component {
       name: 'FlightIndex'
     });
   }
+  
 
   render() {
     console.log("flights: ", this.state.flights);
@@ -100,7 +101,7 @@ class Home extends Component {
       borderColor: 'gray',
       borderWidth: 1,
       width: 200,
-      
+
 
 
           },
