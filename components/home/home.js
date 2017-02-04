@@ -15,13 +15,11 @@ class Home extends Component {
 
   handleSubmit() {
     this.props.fetchFlights(this.state.returnDate);
-
+    this.props.receiveDate(this.state.returnDate);
     this.props.navigator.push({
       name: 'FlightIndex'
     });
-
   }
-
 
   render() {
     return (
