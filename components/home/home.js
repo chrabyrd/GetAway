@@ -8,11 +8,7 @@ class Home extends Component {
 
     this.state = {
       flights: [],
-<<<<<<< HEAD
       budget: "",
-=======
-      budget: "0",
->>>>>>> d4a55aaba22076b073656b4319d77ea3f404cf07
       returnDate: ""
     };
   }
@@ -25,7 +21,7 @@ class Home extends Component {
     });
 
   }
-  
+
 
 
   render() {
@@ -63,12 +59,9 @@ class Home extends Component {
         }}
         onDateChange={(date) => {this.setState({returnDate: date});}}
       />
-<<<<<<< HEAD
+
   </View>
-        <TouchableHighlight style={styles.button} onPress={ () => this._navigate() }>
-=======
     <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
->>>>>>> d4a55aaba22076b073656b4319d77ea3f404cf07
             <Text>Get Flying</Text>
         </TouchableHighlight>
       </View>
@@ -110,14 +103,9 @@ class Home extends Component {
       height: 40,
       borderColor: 'gray',
       borderWidth: 1,
-<<<<<<< HEAD
-      width: 200,
 
-
-=======
       width: 175,
       marginLeft: 120
->>>>>>> d4a55aaba22076b073656b4319d77ea3f404cf07
 
           },
     date: {
