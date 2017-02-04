@@ -21,7 +21,6 @@ class Home extends Component {
     });
   }
 
-
   render() {
     return (
       <View style={styles.container}>
@@ -54,9 +53,9 @@ class Home extends Component {
             dateInput: {
               marginLeft: 36
             }
-          }}
-          onDateChange={(date) => {this.setState({returnDate: date});}}
-        />
+        }}
+        onDateChange={(date) => {this.setState({returnDate: date});}}
+      />
 
       <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
             <Text>Get Flying</Text>
@@ -74,14 +73,13 @@ class Home extends Component {
       alignItems: 'center',
       backgroundColor: '#F5FCFF',
       justifyContent: 'space-around'
-
-        },
+    },
       inputs: {
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-      },
+    },
     title: {
       fontSize: 30,
 

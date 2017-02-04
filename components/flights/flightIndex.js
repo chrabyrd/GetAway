@@ -54,6 +54,7 @@ class FlightIndex extends Component {
     this.state.places = newProps.flightIndex.Places;
     this.state.returnDate = newProps.returnDate;
     this.parseIndexDetails();
+    this.setState({ dataSource: this.state.dataSource.cloneWithRows( this.state.indexFlightInfo ) });
   }
 
   parseIndexDetails() {
@@ -99,7 +100,7 @@ class FlightIndex extends Component {
     return (
       <TouchableHighlight onPress={ () => this.handlePress(flight) }>
         <View style={styles.flightRow}>
-          <Text style={styles.place}>{flight["Arrival City"]}, {flight["Arrival Country"]}</Text>
+          <Text style={styles.place}>{flight["Arrival City"]}</Text>
           <Text style={styles.price}>{flight["Price"]}</Text>
         </View>
       </TouchableHighlight>
@@ -107,12 +108,14 @@ class FlightIndex extends Component {
   }
 
   render() {
+    console.log(this.state.indexFlightInfo);
+
     return (
       <View style={styles.container}>
 
         <ListView
           style={{marginTop: 40}}
-          dataSource={this.state.flightsDataSource}
+          dataSource={this.state.dataSource}
           renderRow={(flight) => { return this._renderFlightRow(flight) ;}}
         />
 
