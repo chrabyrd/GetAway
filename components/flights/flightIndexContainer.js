@@ -1,5 +1,5 @@
 import { connect } from 'react-redux';
-import { fetchFlights, redirectToPage } from '../../actions/flightActions';
+import { redirectToPage } from '../../actions/flightActions';
 import FlightIndex from './flightIndex';
 
 const mapStateToProps = ({flightIndex, returnDate}) => ({
@@ -8,7 +8,6 @@ const mapStateToProps = ({flightIndex, returnDate}) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchFlights: date => dispatch(fetchFlights(date)),
   redirectToPage: (destinationAirport, leaveDate, returnDate) => redirectToPage(destinationAirport, leaveDate, returnDate)
 });
 

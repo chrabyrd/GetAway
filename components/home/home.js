@@ -8,20 +8,27 @@ class Home extends Component {
 
     this.state = {
       flights: [],
-      budget: "",
-      returnDate: ""
+      returnDate: "",
+      departAirport: "JFK"
     };
   }
 
   handleSubmit() {
-    this.props.fetchFlights(this.state.returnDate);
+    // Potentially check consecutive days
+    for(let i = 48; i < 72; i += 24) {
+      let leaveDate = new Date();
+      leaveDate.setHours(leaveDate.getHours() + i);
+      leaveDate = leaveDate.toJSON().slice(0,10);
 
+      this.props.fetchFlights(this.state.departAirport, leaveDate, this.state.returnDate);
+    }
+
+    this.props.receiveDate(this.state.returnDate);
     this.props.navigator.push({
       name: 'FlightIndex'
     });
 
   }
-
 
   render() {
     return (
@@ -30,13 +37,6 @@ class Home extends Component {
         >
         <View style={styles.inputs}>
         <Text style={styles.title}>Leave Now</Text>
-        <TextInput
-          placeholder="Budget"
-          keyboardType = 'numeric'
-          onChangeText={(budget) => this.setState({budget})}
-          value={this.state.budget}
-          style={styles.budget}
-        />
         <DatePicker
           style={styles.date}
           date={this.state.returnDate}
@@ -78,7 +78,6 @@ class Home extends Component {
       justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: '#F5FCFF',
-      justifyContent: 'space-around'
     },
       inputs: {
         flex: 1,

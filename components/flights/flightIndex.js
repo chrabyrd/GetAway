@@ -15,7 +15,7 @@ class FlightIndex extends Component {
     const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
     this.state = {
-      quotes: "",
+      quotes: [],
       places: "",
       returnDate: "",
       indexFlightInfo: "",
@@ -24,7 +24,9 @@ class FlightIndex extends Component {
   }
 
   componentWillReceiveProps(newProps) {
-    this.state.quotes = newProps.flightIndex.Quotes;
+    newProps.flightIndex.Quotes.forEach(quote => {
+      this.state.quotes.push(quote);
+    });
     this.state.places = newProps.flightIndex.Places;
     this.state.returnDate = newProps.returnDate;
     this.parseIndexDetails();
@@ -50,21 +52,24 @@ class FlightIndex extends Component {
         destination = this.state.quotes[i].OutboundLeg.DestinationId;
         let departDate = this.state.quotes[i].OutboundLeg.DepartureDate;
         let minPrice = this.state.quotes[i].MinPrice;
-        info.push({
-          "Departure City": this.state.places.find(findOrigin).CityName,
-          "Departure Country": this.state.places.find(findOrigin).CountryName,
-          "Departure Airport": this.state.places.find(findOrigin).SkyscannerCode,
-          "Arrival City": this.state.places.find(findDestination).CityName,
-          "Arrival Country": this.state.places.find(findDestination).CountryName,
-          "Arrival Airport": this.state.places.find(findDestination).SkyscannerCode,
-          "Departure Date": departDate.slice(0, 10),
-          "Price": minPrice
-        });
+
+        if (this.state.places.find(findOrigin) && this.state.places.find(findDestination)) {
+          info.push({
+            "Departure City": this.state.places.find(findOrigin).CityName,
+            "Departure Country": this.state.places.find(findOrigin).CountryName,
+            "Departure Airport": this.state.places.find(findOrigin).SkyscannerCode,
+            "Arrival City": this.state.places.find(findDestination).CityName,
+            "Arrival Country": this.state.places.find(findDestination).CountryName,
+            "Arrival Airport": this.state.places.find(findDestination).SkyscannerCode,
+            "Departure Date": departDate.slice(0, 10),
+            "Price": minPrice
+          });
+        }
       }
     }
 
     info = sortBy(info, "Price");
-    this.state.indexFlightInfo = uniqBy(info, "Arrival Airport");
+    this.state.indexFlightInfo = uniqBy(info, "Arrival Airport", "Departure");
   }
 
   handlePress(flight){

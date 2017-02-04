@@ -8,8 +8,8 @@ const mapStateToProps = ({flightIndex}) => ({
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchFlights: date => dispatch(fetchFlights(date)),
-  receiveDate: date => dispatch(getDate(date))
+  fetchFlights: (departAirport, leaveDate, returnDate) => dispatch(fetchFlights(departAirport, leaveDate, returnDate)),
+  receiveDate: date => dispatch(getDate(date)),
 });
 
 export default connect (

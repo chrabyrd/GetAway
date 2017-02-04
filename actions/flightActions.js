@@ -9,13 +9,8 @@ const receiveFlights = flights => ({
   flights
 });
 
-const receiveFlight = flight => ({
-  type: RECEIVE_FLIGHT,
-  flight
-});
-
-export const fetchFlights = (date) => dispatch => (
-  getIndex(date)
+export const fetchFlights = (departAirport, leaveDate, returnDate) => dispatch => (
+  getIndex(departAirport, leaveDate, returnDate)
   .then(data => data.json())
   .then(flights => dispatch(receiveFlights(flights)))
 );
