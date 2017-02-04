@@ -24,7 +24,11 @@ class Home extends Component {
 
 
   render() {
-    return (
+    let bool = this.state.budget !== "" && this.state.returnDate !== "" ? false : true;
+    let _buttonName = bool ? styles.buttontrue : styles.buttonfalse;
+    let _buttonText = bool ? require('../../assets/images/getFlyingGrey.png') :
+                              require('../../assets/images/getFlyingPurp.png');
+  return (
       <Image style={styles.container}
         source={require('../../assets/images/background.png')}
         >
@@ -67,10 +71,10 @@ class Home extends Component {
         />
 
         </View>
-        <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
+        <TouchableHighlight style={_buttonName} disabled={bool} onPress={ () => this.handleSubmit() }>
 
           <Image style={styles.title}
-            source={require('../../assets/images/getFlyingPurp.png')}
+            source={_buttonText}
             />
         </TouchableHighlight>
       </Image>
@@ -92,7 +96,19 @@ class Home extends Component {
         flexDirection: 'column',
         justifyContent: 'center'
     },
-    button: {
+    buttontrue: {
+      flex: .2,
+      margin: 5,
+      width: 375,
+      padding: 0,
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderWidth: 5,
+      borderRadius: 10,
+      borderColor: '#935AA4',
+      backgroundColor: '#70747a'
+    },
+    buttonfalse: {
       flex: .2,
       margin: 5,
       width: 375,
@@ -104,6 +120,7 @@ class Home extends Component {
       borderColor: '#935AA4',
       backgroundColor: '#EAE7F2'
     },
+
     BudgetView: {
 
       marginTop: 80,
