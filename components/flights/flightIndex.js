@@ -8,27 +8,52 @@ import {
   ListView
 } from 'react-native';
 
+const flights = [{
+    "Arrival City": "Portland",
+    "Arrival Country": "United States",
+    "Departure City": "San Francisco",
+    "Departure Country": "United States",
+    "Departure Date": "2017-02-05T00:00:00",
+    "Price": 161
+  },
+  {
+    "Arrival City": "Chicago",
+    "Arrival Country": "United States",
+    "Departure City": "San Francisco",
+    "Departure Country": "United States",
+    "Departure Date": "2017-02-05T00:00:00",
+    "Price": 161
+  },
+  {
+    "Arrival City": "PyeongYang",
+    "Arrival Country": "United States",
+    "Arrival Airport": "LAX",
+    "Departure City": "San Francisco",
+    "Departure Country": "United States",
+    "Departure Date": "2017-02-05",
+    "Price": 161
+  }
+];
+
 class FlightIndex extends Component {
   constructor(props) {
     super(props);
-    const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
     this.state = {
       quotes: "",
       places: "",
+      returnDate: "",
       indexFlightInfo: "",
-      dataSource: dataSource
+      flightsDataSource: ds.cloneWithRows(flights)
     };
   }
 
   componentWillReceiveProps(newProps) {
     this.state.quotes = newProps.flightIndex.Quotes;
     this.state.places = newProps.flightIndex.Places;
+    this.state.returnDate = newProps.returnDate;
     this.parseIndexDetails();
-  }
-
-  componentDidUpdate() {
-    this.setState({ dataSource: this.state.dataSource.cloneWithRows( this.state.indexFlightInfo ) });
   }
 
   parseIndexDetails() {
@@ -53,9 +78,11 @@ class FlightIndex extends Component {
         info.push({
           "Departure City": this.state.places.find(findOrigin).CityName,
           "Departure Country": this.state.places.find(findOrigin).CountryName,
+          "Departure Airport": this.state.places.find(findOrigin).SkyscannerCode,
           "Arrival City": this.state.places.find(findDestination).CityName,
           "Arrival Country": this.state.places.find(findDestination).CountryName,
-          "Departure Date": departDate,
+          "Arrival Airport": this.state.places.find(findDestination).SkyscannerCode,
+          "Departure Date": departDate.slice(0, 10),
           "Price": minPrice
         });
       }
@@ -64,19 +91,15 @@ class FlightIndex extends Component {
     this.state.indexFlightInfo = info;
   }
 
-  _navigate(){
-    // update state with choosen flight
-    this.props.navigator.push({
-      name: 'FlightDetail'
-    });
+  handlePress(flight){
+    this.props.redirectToPage(flight["Arrival Airport"], flight["Departure Date"], this.state.returnDate);
   }
 
   _renderFlightRow(flight) {
-    const arrival = `${flight["Arrival City"]}, ${flight["Arrival Country"]}`;
     return (
-      <TouchableHighlight onPress={ () => this._navigate() }>
+      <TouchableHighlight onPress={ () => this.handlePress(flight) }>
         <View style={styles.flightRow}>
-          <Text style={styles.place}>{arrival}</Text>
+          <Text style={styles.place}>{flight["Arrival City"]}, {flight["Arrival Country"]}</Text>
           <Text style={styles.price}>{flight["Price"]}</Text>
         </View>
       </TouchableHighlight>
@@ -89,7 +112,7 @@ class FlightIndex extends Component {
 
         <ListView
           style={{marginTop: 40}}
-          dataSource={this.state.dataSource}
+          dataSource={this.state.flightsDataSource}
           renderRow={(flight) => { return this._renderFlightRow(flight) ;}}
         />
 
