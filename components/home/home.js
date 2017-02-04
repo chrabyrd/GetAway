@@ -21,7 +21,6 @@ class Home extends Component {
     });
   }
 
-
   render() {
     return (
       <View style={styles.container}>
@@ -54,20 +53,10 @@ class Home extends Component {
             dateInput: {
               marginLeft: 36
             }
-<<<<<<< HEAD
-        }}
-        onDateChange={(date) => {this.setState({returnDate: date});}}
-      />
-
-  </View>
-    <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
-=======
           }}
           onDateChange={(date) => {this.setState({returnDate: date});}}
         />
-
       <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
->>>>>>> d7e2f8a6e3ccd8279344c6cc1b0c16b5e9d370e9
             <Text>Get Flying</Text>
         </TouchableHighlight>
       </View>
@@ -83,14 +72,13 @@ class Home extends Component {
       alignItems: 'center',
       backgroundColor: '#F5FCFF',
       justifyContent: 'space-around'
-
-        },
+    },
       inputs: {
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-      },
+    },
     title: {
       fontSize: 30,
 
@@ -109,17 +97,9 @@ class Home extends Component {
       height: 40,
       borderColor: 'gray',
       borderWidth: 1,
-<<<<<<< HEAD
-
-      width: 175,
-      marginLeft: 120
-
-          },
-=======
       width: 175,
       marginLeft: 120
     },
->>>>>>> d7e2f8a6e3ccd8279344c6cc1b0c16b5e9d370e9
     date: {
       marginTop: 40,
       width: 200

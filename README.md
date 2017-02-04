@@ -24,7 +24,6 @@ Using LeaveNow, users will be able to:
 ##Technologies & Technical Challenges
 =======
 ## Technologies & Technical Challenges
->>>>>>> 98f818a5175d0c694f6eb42d5b3bfcd99adb6a3b
 
 There will be three pages:
   - Splash/loading page
