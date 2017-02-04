@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import { uniqBy, sortBy } from 'lodash';
 import {
   View,
   Text,
@@ -7,33 +8,6 @@ import {
   TouchableHighlight,
   ListView
 } from 'react-native';
-
-const flights = [{
-    "Arrival City": "Portland",
-    "Arrival Country": "United States",
-    "Departure City": "San Francisco",
-    "Departure Country": "United States",
-    "Departure Date": "2017-02-05T00:00:00",
-    "Price": 161
-  },
-  {
-    "Arrival City": "Chicago",
-    "Arrival Country": "United States",
-    "Departure City": "San Francisco",
-    "Departure Country": "United States",
-    "Departure Date": "2017-02-05T00:00:00",
-    "Price": 161
-  },
-  {
-    "Arrival City": "PyeongYang",
-    "Arrival Country": "United States",
-    "Arrival Airport": "LAX",
-    "Departure City": "San Francisco",
-    "Departure Country": "United States",
-    "Departure Date": "2017-02-05",
-    "Price": 161
-  }
-];
 
 class FlightIndex extends Component {
   constructor(props) {
@@ -89,7 +63,8 @@ class FlightIndex extends Component {
       }
     }
 
-    this.state.indexFlightInfo = info;
+    info = sortBy(info, "Price");
+    this.state.indexFlightInfo = uniqBy(info, "Arrival Airport");
   }
 
   handlePress(flight){
@@ -108,15 +83,14 @@ class FlightIndex extends Component {
   }
 
   render() {
-    console.log(this.state.indexFlightInfo);
-
     return (
       <View style={styles.container}>
 
         <ListView
           style={{marginTop: 40}}
           dataSource={this.state.dataSource}
-          renderRow={(flight) => { return this._renderFlightRow(flight) ;}}
+          enableEmptySections={true}
+          renderRow={flight => (this._renderFlightRow(flight))}
         />
 
       </View>
