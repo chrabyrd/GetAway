@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Navigator, TouchableHighlight, TextInput, Linking} from 'react-native';
+import { View, Text, StyleSheet, Navigator, TouchableHighlight, TextInput, Linking, Image} from 'react-native';
 import DatePicker from 'react-native-datepicker';
 
 class Home extends Component {
@@ -15,16 +15,20 @@ class Home extends Component {
 
   handleSubmit() {
     this.props.fetchFlights(this.state.returnDate);
-    this.props.receiveDate(this.state.returnDate);
+
     this.props.navigator.push({
       name: 'FlightIndex'
     });
+
   }
+
 
 
   render() {
     return (
-      <View style={styles.container}>
+      <Image style={styles.container}
+        source={require('../../assets/images/background.png')}
+        >
         <View style={styles.inputs}>
         <Text style={styles.title}>Leave Now</Text>
         <TextInput
@@ -54,24 +58,14 @@ class Home extends Component {
             dateInput: {
               marginLeft: 36
             }
-<<<<<<< HEAD
-        }}
-        onDateChange={(date) => {this.setState({returnDate: date});}}
-      />
-
-  </View>
-    <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
-=======
           }}
           onDateChange={(date) => {this.setState({returnDate: date});}}
         />
-
-      <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
->>>>>>> d7e2f8a6e3ccd8279344c6cc1b0c16b5e9d370e9
+        </View>
+        <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
             <Text>Get Flying</Text>
         </TouchableHighlight>
-      </View>
-    </View>
+      </Image>
     );
   }
 }
@@ -80,6 +74,7 @@ class Home extends Component {
     container: {
       flex: 1,
       flexDirection: 'column',
+      justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: '#F5FCFF',
       justifyContent: 'space-around'
@@ -93,6 +88,7 @@ class Home extends Component {
       },
     title: {
       fontSize: 30,
+      backgroundColor: 'transparent'
 
     },
     button: {
@@ -109,17 +105,8 @@ class Home extends Component {
       height: 40,
       borderColor: 'gray',
       borderWidth: 1,
-<<<<<<< HEAD
-
-      width: 175,
-      marginLeft: 120
-
+      width: 200
           },
-=======
-      width: 175,
-      marginLeft: 120
-    },
->>>>>>> d7e2f8a6e3ccd8279344c6cc1b0c16b5e9d370e9
     date: {
       marginTop: 40,
       width: 200
