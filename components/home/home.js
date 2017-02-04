@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { View, Text, StyleSheet, Navigator, TouchableHighlight, TextInput } from 'react-native';
+import { View, Text, StyleSheet, Navigator, TouchableHighlight, TextInput, Linking} from 'react-native';
 import DatePicker from 'react-native-datepicker';
 
 class Home extends Component {
@@ -8,7 +8,7 @@ class Home extends Component {
 
     this.state = {
       flights: [],
-      budget: "0",
+      budget: "",
       returnDate: ""
     };
   }
@@ -21,10 +21,12 @@ class Home extends Component {
     });
   }
 
+
   render() {
     return (
       <View style={styles.container}>
-        <Text>Leave Now</Text>
+        <View style={styles.inputs}>
+        <Text style={styles.title}>Leave Now</Text>
         <TextInput
           placeholder="Budget"
           keyboardType = 'numeric'
@@ -52,13 +54,15 @@ class Home extends Component {
             dateInput: {
               marginLeft: 36
             }
-        }}
-        onDateChange={(date) => {this.setState({returnDate: date});}}
-      />
-    <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
+          }}
+          onDateChange={(date) => {this.setState({returnDate: date});}}
+        />
+
+      <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
             <Text>Get Flying</Text>
         </TouchableHighlight>
       </View>
+    </View>
     );
   }
 }
@@ -67,23 +71,40 @@ class Home extends Component {
     container: {
       flex: 1,
       flexDirection: 'column',
-      justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: '#F5FCFF',
+      justifyContent: 'space-around'
+
         },
+      inputs: {
+        flex: 1,
+        flexDirection: 'column',
+        justifyContent: 'center',
+        alignItems: 'center',
+      },
+    title: {
+      fontSize: 30,
+
+    },
     button: {
+      flex: .2,
+      margin: 5,
+      padding: 5,
+      justifyContent: 'center',
+      alignItems: 'center',
       borderWidth: 1,
-      backgroundColor: '#9ad3de'
+      backgroundColor: 'ghostwhite'
     },
     budget: {
+      marginTop: 80,
       height: 40,
       borderColor: 'gray',
       borderWidth: 1,
       width: 175,
       marginLeft: 120
-
-          },
+    },
     date: {
+      marginTop: 40,
       width: 200
     }
   });
