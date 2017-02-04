@@ -8,11 +8,7 @@ class Home extends Component {
 
     this.state = {
       flights: [],
-<<<<<<< HEAD
       budget: "",
-=======
-      budget: "0",
->>>>>>> d4a55aaba22076b073656b4319d77ea3f404cf07
       returnDate: ""
     };
   }
@@ -23,10 +19,7 @@ class Home extends Component {
     this.props.navigator.push({
       name: 'FlightIndex'
     });
-
   }
-  
-
 
   render() {
     return (
@@ -63,12 +56,9 @@ class Home extends Component {
         }}
         onDateChange={(date) => {this.setState({returnDate: date});}}
       />
-<<<<<<< HEAD
-  </View>
-        <TouchableHighlight style={styles.button} onPress={ () => this._navigate() }>
-=======
-    <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
->>>>>>> d4a55aaba22076b073656b4319d77ea3f404cf07
+
+    </View>
+        <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
             <Text>Get Flying</Text>
         </TouchableHighlight>
       </View>
@@ -84,14 +74,13 @@ class Home extends Component {
       alignItems: 'center',
       backgroundColor: '#F5FCFF',
       justifyContent: 'space-around'
-
-        },
+    },
       inputs: {
         flex: 1,
         flexDirection: 'column',
         justifyContent: 'center',
         alignItems: 'center',
-      },
+    },
     title: {
       fontSize: 30,
 
@@ -110,16 +99,9 @@ class Home extends Component {
       height: 40,
       borderColor: 'gray',
       borderWidth: 1,
-<<<<<<< HEAD
-      width: 200,
-
-
-=======
       width: 175,
       marginLeft: 120
->>>>>>> d4a55aaba22076b073656b4319d77ea3f404cf07
-
-          },
+    },
     date: {
       marginTop: 40,
       width: 200

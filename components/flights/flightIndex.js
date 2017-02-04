@@ -84,11 +84,8 @@ class FlightIndex extends Component {
   }
 
   render() {
-<<<<<<< HEAD
     console.log(this.state.indexFlightInfo);
 
-=======
->>>>>>> d4a55aaba22076b073656b4319d77ea3f404cf07
     return (
       <View style={styles.container}>
 
