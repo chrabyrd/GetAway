@@ -38,14 +38,14 @@ const flights = [{
 class FlightIndex extends Component {
   constructor(props) {
     super(props);
-    const ds = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
+    const dataSource = new ListView.DataSource({rowHasChanged: (r1, r2) => r1 !== r2});
 
     this.state = {
       quotes: "",
       places: "",
       returnDate: "",
       indexFlightInfo: "",
-      flightsDataSource: ds.cloneWithRows(flights)
+      dataSource: dataSource
     };
   }
 
