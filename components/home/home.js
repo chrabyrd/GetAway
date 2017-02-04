@@ -15,7 +15,7 @@ class Home extends Component {
 
   handleSubmit() {
     this.props.fetchFlights(this.state.returnDate);
-
+    this.props.receiveDate(this.state.returnDate);
     this.props.navigator.push({
       name: 'FlightIndex'
     });
@@ -57,11 +57,11 @@ class Home extends Component {
         onDateChange={(date) => {this.setState({returnDate: date});}}
       />
 
-    </View>
-        <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
+      <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
             <Text>Get Flying</Text>
         </TouchableHighlight>
       </View>
+    </View>
     );
   }
 }
@@ -70,7 +70,6 @@ class Home extends Component {
     container: {
       flex: 1,
       flexDirection: 'column',
-      justifyContent: 'center',
       alignItems: 'center',
       backgroundColor: '#F5FCFF',
       justifyContent: 'space-around'

@@ -8,6 +8,33 @@ import {
   ListView
 } from 'react-native';
 
+const flights = [{
+    "Arrival City": "Portland",
+    "Arrival Country": "United States",
+    "Departure City": "San Francisco",
+    "Departure Country": "United States",
+    "Departure Date": "2017-02-05T00:00:00",
+    "Price": 161
+  },
+  {
+    "Arrival City": "Chicago",
+    "Arrival Country": "United States",
+    "Departure City": "San Francisco",
+    "Departure Country": "United States",
+    "Departure Date": "2017-02-05T00:00:00",
+    "Price": 161
+  },
+  {
+    "Arrival City": "PyeongYang",
+    "Arrival Country": "United States",
+    "Arrival Airport": "LAX",
+    "Departure City": "San Francisco",
+    "Departure Country": "United States",
+    "Departure Date": "2017-02-05",
+    "Price": 161
+  }
+];
+
 class FlightIndex extends Component {
   constructor(props) {
     super(props);
@@ -16,6 +43,7 @@ class FlightIndex extends Component {
     this.state = {
       quotes: "",
       places: "",
+      returnDate: "",
       indexFlightInfo: "",
       dataSource: dataSource
     };
@@ -24,10 +52,8 @@ class FlightIndex extends Component {
   componentWillReceiveProps(newProps) {
     this.state.quotes = newProps.flightIndex.Quotes;
     this.state.places = newProps.flightIndex.Places;
+    this.state.returnDate = newProps.returnDate;
     this.parseIndexDetails();
-  }
-
-  componentDidUpdate() {
     this.setState({ dataSource: this.state.dataSource.cloneWithRows( this.state.indexFlightInfo ) });
   }
 
@@ -53,9 +79,11 @@ class FlightIndex extends Component {
         info.push({
           "Departure City": this.state.places.find(findOrigin).CityName,
           "Departure Country": this.state.places.find(findOrigin).CountryName,
+          "Departure Airport": this.state.places.find(findOrigin).SkyscannerCode,
           "Arrival City": this.state.places.find(findDestination).CityName,
           "Arrival Country": this.state.places.find(findDestination).CountryName,
-          "Departure Date": departDate,
+          "Arrival Airport": this.state.places.find(findDestination).SkyscannerCode,
+          "Departure Date": departDate.slice(0, 10),
           "Price": minPrice
         });
       }
@@ -64,19 +92,15 @@ class FlightIndex extends Component {
     this.state.indexFlightInfo = info;
   }
 
-  _navigate(){
-    // update state with choosen flight
-    this.props.navigator.push({
-      name: 'FlightDetail'
-    });
+  handlePress(flight){
+    this.props.redirectToPage(flight["Arrival Airport"], flight["Departure Date"], this.state.returnDate);
   }
 
   _renderFlightRow(flight) {
-    const arrival = `${flight["Arrival City"]}, ${flight["Arrival Country"]}`;
     return (
-      <TouchableHighlight onPress={ () => this._navigate() }>
+      <TouchableHighlight onPress={ () => this.handlePress(flight) }>
         <View style={styles.flightRow}>
-          <Text style={styles.place}>{arrival}</Text>
+          <Text style={styles.place}>{flight["Arrival City"]}</Text>
           <Text style={styles.price}>{flight["Price"]}</Text>
         </View>
       </TouchableHighlight>
