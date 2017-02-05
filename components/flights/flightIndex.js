@@ -8,6 +8,7 @@ import {
   TouchableHighlight,
   ListView
 } from 'react-native';
+import Spinner from 'react-native-loading-spinner-overlay';
 
 class FlightIndex extends Component {
   constructor(props) {
@@ -19,18 +20,30 @@ class FlightIndex extends Component {
       places: "",
       returnDate: "",
       indexFlightInfo: "",
-      dataSource: dataSource
+      dataSource: dataSource,
+      visible: false
     };
+  }
+
+  componentDidMount() {
+    this.setState({
+      visible: !this.state.visible
+    });
   }
 
   componentWillReceiveProps(newProps) {
     newProps.flightIndex.Quotes.forEach(quote => {
       this.state.quotes.push(quote);
     });
+
     this.state.places = newProps.flightIndex.Places;
     this.state.returnDate = newProps.returnDate;
     this.parseIndexDetails();
     this.setState({ dataSource: this.state.dataSource.cloneWithRows( this.state.indexFlightInfo ) });
+
+    this.setState({
+      visible: !this.state.visible
+    });
   }
 
   parseIndexDetails() {
@@ -105,6 +118,9 @@ class FlightIndex extends Component {
           enableEmptySections={true}
           renderRow={flight => (this._renderFlightRow(flight))}
         />
+        <Spinner visible={this.state.visible}
+                textContent={"Loading..."}
+                textStyle={{color: '#FFF'}} />
 
       </View>
     );
