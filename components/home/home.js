@@ -31,12 +31,31 @@ class Home extends Component {
   }
 
   render() {
-    return (
+    let bool = this.state.returnDate !== "" ? false : true;
+    let _buttonName = bool ? styles.buttontrue : styles.buttonfalse;
+    let _buttonText = bool ? require('../../assets/images/getFlyingGrey.png') :
+                              require('../../assets/images/getFlyingPurp.png');
+  return (
       <Image style={styles.container}
         source={require('../../assets/images/background.png')}
         >
         <View style={styles.inputs}>
+<<<<<<< HEAD
         <Text style={styles.title}>Leave Now</Text>
+=======
+          <Image style={styles.title}
+            source={require('../../assets/images/leavePurp.png')}
+            />
+        <View style={styles.BudgetView}>
+          <TextInput
+            placeholder="Budget"
+            keyboardType = 'numeric'
+            onChangeText={(budget) => this.setState({budget})}
+            value={this.state.budget}
+            style={styles.budget}
+          />
+      </View>
+>>>>>>> 0202edc5ac76f5033b960a5ab0e81fc7daec356a
         <DatePicker
           style={styles.date}
           date={this.state.returnDate}
@@ -55,16 +74,19 @@ class Home extends Component {
               marginLeft: 0
             },
             dateInput: {
-              marginLeft: 36
+              marginLeft: 36,
+              borderWidth: 0
             }
           }}
           onDateChange={(date) => {this.setState({returnDate: date});}}
         />
 
         </View>
-        <TouchableHighlight style={styles.button} onPress={ () => this.handleSubmit() }>
+        <TouchableHighlight style={_buttonName} disabled={bool} onPress={ () => this.handleSubmit() }>
 
-            <Text>Get Flying</Text>
+          <Image style={styles.title}
+            source={_buttonText}
+            />
         </TouchableHighlight>
       </Image>
     );
@@ -82,32 +104,56 @@ class Home extends Component {
       inputs: {
         flex: 1,
         flexDirection: 'column',
-        justifyContent: 'center',
-        alignItems: 'center',
+        justifyContent: 'center'
     },
-    title: {
-      fontSize: 30,
-      backgroundColor: 'transparent'
-
-    },
-    button: {
+    buttontrue: {
       flex: .2,
       margin: 5,
-      padding: 5,
+      width: 375,
+      padding: 0,
       justifyContent: 'center',
       alignItems: 'center',
-      borderWidth: 1,
-      backgroundColor: 'ghostwhite'
+      borderWidth: 5,
+      borderRadius: 10,
+      borderColor: '#935AA4',
+      backgroundColor: '#70747a'
+    },
+    buttonfalse: {
+      flex: .2,
+      margin: 5,
+      width: 375,
+      padding: 0,
+      justifyContent: 'center',
+      alignItems: 'center',
+      borderWidth: 5,
+      borderRadius: 10,
+      borderColor: '#935AA4',
+      backgroundColor: '#EAE7F2'
+    },
+
+    BudgetView: {
+
+      marginTop: 80,
+      height: 40
     },
     budget: {
-      marginTop: 80,
-      height: 40,
-      borderColor: 'gray',
-      borderWidth: 1,
+      padding: 0,
+      textAlign: 'right',
+      paddingRight: 10,
+      backgroundColor: '#EAE7F2',
+      flex: 1,
+      justifyContent: 'center',
+      borderColor: '#935AA4',
+      borderWidth: 3,
+      borderRadius: 10,
       width: 200
     },
 
     date: {
+      backgroundColor: '#EAE7F2',
+      borderColor: '#935AA4',
+      borderWidth: 3,
+      borderRadius: 10,
       marginTop: 40,
       width: 200
     }
