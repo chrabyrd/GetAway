@@ -24,7 +24,7 @@ class Home extends Component {
 
 
   render() {
-    let bool = this.state.budget !== "" && this.state.returnDate !== "" ? false : true;
+    let bool = this.state.returnDate !== "" ? false : true;
     let _buttonName = bool ? styles.buttontrue : styles.buttonfalse;
     let _buttonText = bool ? require('../../assets/images/getFlyingGrey.png') :
                               require('../../assets/images/getFlyingPurp.png');
@@ -63,7 +63,7 @@ class Home extends Component {
               marginLeft: 0
             },
             dateInput: {
-              // marginLeft: 36,
+              marginLeft: 36,
               borderWidth: 0
             }
           }}

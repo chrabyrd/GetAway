@@ -75,6 +75,7 @@ class FlightIndex extends Component {
         origin = this.state.quotes[i].InboundLeg.DestinationId;
         destination = this.state.quotes[i].OutboundLeg.DestinationId;
         let departDate = this.state.quotes[i].OutboundLeg.DepartureDate;
+        let returnDate = this.state.quotes[i].InboundLeg.DepartureDate;
         let minPrice = this.state.quotes[i].MinPrice;
         info.push({
           "Departure City": this.state.places.find(findOrigin).CityName,
@@ -84,6 +85,7 @@ class FlightIndex extends Component {
           "Arrival Country": this.state.places.find(findDestination).CountryName,
           "Arrival Airport": this.state.places.find(findDestination).SkyscannerCode,
           "Departure Date": departDate.slice(0, 10),
+          "Return Date": returnDate.slice(0, 10),
           "Price": minPrice
         });
       }
@@ -100,8 +102,14 @@ class FlightIndex extends Component {
     return (
       <TouchableHighlight onPress={ () => this.handlePress(flight) }>
         <View style={styles.flightRow}>
-          <Text style={styles.place}>{flight["Arrival City"]}</Text>
-          <Text style={styles.price}>{flight["Price"]}</Text>
+          <View style={styles.name}>
+            <Text style={styles.place}>{flight["Arrival City"]}, {flight["Arrival Country"]}</Text>
+            <Text style={styles.price}>${flight["Price"]}</Text>
+          </View>
+           <View style={styles.itin}>
+             <Text style={styles.itinText}>{flight["Departure Airport"]}  ----->  {flight["Arrival Airport"]}  {flight["Departure Date"]}</Text>
+             <Text style={styles.itinText}>{flight["Arrival Airport"]}  ----->  {flight["Departure Airport"]}  {flight["Return Date"]}</Text>
+           </View>
         </View>
       </TouchableHighlight>
     );
@@ -109,7 +117,6 @@ class FlightIndex extends Component {
 
   render() {
     console.log(this.state.indexFlightInfo);
-
     return (
       <View style={styles.container}>
 
@@ -129,25 +136,41 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#F5FCFF',
+    backgroundColor: '#EAE7F2'
   },
   button: {
     borderWidth: 1,
     backgroundColor: '#9ad3de'
   },
-  flightRow: {
-    padding: 20,
+  name: {
+    flex: 1,
     flexDirection: 'row',
     justifyContent: 'space-between',
-    borderBottomWidth: 1,
-    borderBottomColor: '#dcdcdc'
+
+  },
+  flightRow: {
+    padding: 20,
+    flexDirection: 'column',
+    borderBottomWidth: 2,
+    borderBottomColor: '#935AA4',
+  },
+  itin: {
+    flex: 1,
+    alignItems: 'center',
+
+  },
+  itinText: {
+    fontFamily: 'Iowan Old Style',
+    color: 'slategray'
   },
   place: {
-    // color: 'slategray'
+    fontFamily: 'IowanOldStyle-Bold',
+    color: '#534591',
     paddingRight: 100
   },
   price: {
-    color: 'gray'
+    fontFamily: 'IowanOldStyle-Bold',
+    color: 'slategray'
   }
 
 });
