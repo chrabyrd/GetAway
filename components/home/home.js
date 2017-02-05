@@ -59,7 +59,7 @@ class Home extends Component {
     maxReturnDate.setDate(maxReturnDate.getDate() + 120);
 
     let bool = this.state.returnDate !== "" ? false : true;
-    let _buttonName = bool ? styles.buttonFalse : styles.buttonFalse;
+    let _buttonName = bool ? styles.buttonDisabled : styles.button;
     // let _buttonText = bool ? require('../../assets/images/getFlyingGrey.png') :
     //                           require('../../assets/images/getFlyingPurp.png');
   return (
@@ -119,7 +119,7 @@ class Home extends Component {
         flexDirection: 'column',
         justifyContent: 'center'
     },
-    buttonFalse: {
+    buttonDisabled: {
       margin: 5,
       width: 300,
       height: 100,
@@ -132,7 +132,7 @@ class Home extends Component {
       backgroundColor: '#70747a',
       opacity: .5
     },
-    buttonTrue: {
+    button: {
       margin: 5,
       width: 300,
       height: 100,
@@ -143,7 +143,7 @@ class Home extends Component {
       borderRadius: 5,
       borderColor: '#63676d',
       backgroundColor: '#70747a',
-      opacity:
+      opacity: 1
     },
     buttonText: {
       color: 'white',
