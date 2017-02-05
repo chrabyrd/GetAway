@@ -9,7 +9,7 @@ class Home extends Component {
     this.state = {
       flights: [],
       returnDate: "",
-      departAirport: "JFK"
+      departAirport: "JFK",
     };
   }
 
@@ -31,6 +31,12 @@ class Home extends Component {
   }
 
   render() {
+    let minReturnDate = new Date();
+    minReturnDate.setDate(minReturnDate.getDate() + 5);
+
+    let maxReturnDate = new Date();
+    maxReturnDate.setDate(maxReturnDate.getDate() + 120);
+
     let bool = this.state.returnDate !== "" ? false : true;
     let _buttonName = bool ? styles.buttontrue : styles.buttonfalse;
     let _buttonText = bool ? require('../../assets/images/getFlyingGrey.png') :
@@ -40,30 +46,17 @@ class Home extends Component {
         source={require('../../assets/images/background.png')}
         >
         <View style={styles.inputs}>
-<<<<<<< HEAD
-        <Text style={styles.title}>Leave Now</Text>
-=======
           <Image style={styles.title}
             source={require('../../assets/images/leavePurp.png')}
             />
-        <View style={styles.BudgetView}>
-          <TextInput
-            placeholder="Budget"
-            keyboardType = 'numeric'
-            onChangeText={(budget) => this.setState({budget})}
-            value={this.state.budget}
-            style={styles.budget}
-          />
-      </View>
->>>>>>> 0202edc5ac76f5033b960a5ab0e81fc7daec356a
         <DatePicker
           style={styles.date}
           date={this.state.returnDate}
           mode="date"
-          placeholder="select date"
+          placeholder="Return Date"
           format="YYYY-MM-DD"
-          minDate= "new Date().toJSON().slice(0,10);"
-          maxDate="2017-12-31"
+          minDate={minReturnDate}
+          maxDate={maxReturnDate}
           confirmBtnText="Confirm"
           cancelBtnText="Cancel"
           customStyles={{
