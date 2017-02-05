@@ -20,12 +20,12 @@ export const fetchFlights = (departAirport, leaveDate, returnDate) => dispatch =
   .then(flights => dispatch(receiveFlights(flights)))
 );
 
-export const fetchClosestAirport = () => dispatch => (
-  getNearestAirport()
+export const fetchClosestAirport = (lat, long) => dispatch => (
+  getNearestAirport(lat, long)
   .then(res => res.json())
   .then(airport => dispatch(receiveAirport(airport.airports[0])))
 );
 
-export const redirectToPage = (destinationAirport, leaveDate, returnDate) => (
-  redirect(destinationAirport, leaveDate, returnDate).then(response => Linking.openURL(response.url))
+export const redirectToPage = (departAirport, destinationAirport, leaveDate, returnDate) => (
+  redirect(departAirport, destinationAirport, leaveDate, returnDate).then(response => Linking.openURL(response.url))
 );

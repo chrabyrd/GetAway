@@ -11,7 +11,7 @@ const mapStateToProps = ({flightIndex, nearestAirport}) => ({
 const mapDispatchToProps = dispatch => ({
   fetchFlights: (departAirport, leaveDate, returnDate) => dispatch(fetchFlights(departAirport, leaveDate, returnDate)),
   receiveDate: date => dispatch(getDate(date)),
-  fetchClosestAirport: () => dispatch(fetchClosestAirport())
+  fetchClosestAirport: (lat, long) => dispatch(fetchClosestAirport(lat, long))
 });
 
 export default connect (

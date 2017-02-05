@@ -14,7 +14,11 @@ class Home extends Component {
   }
 
   componentDidMount() {
-    this.props.fetchClosestAirport();
+    navigator.geolocation.getCurrentPosition(position => {
+      let lat = position.coords.latitude;
+      let long = position.coords.longitude;
+      this.props.fetchClosestAirport(lat, long);
+    });
   }
 
   componentWillReceiveProps(newProps) {
@@ -39,6 +43,7 @@ class Home extends Component {
   }
 
   render() {
+
     let minReturnDate = new Date();
     minReturnDate.setDate(minReturnDate.getDate() + 5);
 

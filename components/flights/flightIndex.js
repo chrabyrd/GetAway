@@ -74,7 +74,7 @@ class FlightIndex extends Component {
   }
 
   handlePress(flight){
-    this.props.redirectToPage(flight["Arrival Airport"], flight["Departure Date"], this.state.returnDate);
+    this.props.redirectToPage(this.props.nearestAirport.code, flight["Arrival Airport"], flight["Departure Date"], this.state.returnDate);
   }
 
   _renderFlightRow(flight) {

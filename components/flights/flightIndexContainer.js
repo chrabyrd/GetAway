@@ -2,13 +2,14 @@ import { connect } from 'react-redux';
 import { redirectToPage } from '../../actions/flightActions';
 import FlightIndex from './flightIndex';
 
-const mapStateToProps = ({flightIndex, returnDate}) => ({
+const mapStateToProps = ({flightIndex, returnDate, nearestAirport}) => ({
   flightIndex,
-  returnDate
+  returnDate,
+  nearestAirport
 });
 
 const mapDispatchToProps = dispatch => ({
-  redirectToPage: (destinationAirport, leaveDate, returnDate) => redirectToPage(destinationAirport, leaveDate, returnDate)
+  redirectToPage: (departAirport, destinationAirport, leaveDate, returnDate) => redirectToPage(departAirport, destinationAirport, leaveDate, returnDate)
 });
 
 export default connect (
