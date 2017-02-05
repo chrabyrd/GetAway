@@ -97,7 +97,7 @@ class Home extends Component {
         <TouchableHighlight style={_buttonName}
                             disabled={bool}
                             onPress={ () => this.handleSubmit() }>
-          <Text style={styles.buttonText}>Let's Go</Text>
+          <Text style={styles.buttonText}>Get Flying</Text>
         </TouchableHighlight>
       </Image>
     );
@@ -139,10 +139,14 @@ class Home extends Component {
       padding: 0,
       justifyContent: 'center',
       alignItems: 'center',
-      borderWidth: 2,
       borderRadius: 5,
-      borderColor: '#63676d',
-      backgroundColor: '#70747a',
+      borderTopWidth: 0,
+      borderLeftWidth: 0,
+      borderBottomWidth: 2,
+      borderRightWidth: 2,
+      borderBottomColor: '#538cc6',
+      borderRightColor: '#538cc6',
+      backgroundColor: '#609CDA',
       opacity: 1
     },
     buttonText: {
@@ -151,7 +155,7 @@ class Home extends Component {
     },
     logo: {
       fontSize: 60,
-      marginTop: 80,
+      marginTop: 140,
       backgroundColor: 'transparent',
       color: 'white'
     },
@@ -160,7 +164,7 @@ class Home extends Component {
       borderColor: 'gray',
       borderWidth: 1,
       borderRadius: 5,
-      marginTop: 40,
+      // marginTop:  0,
       width: 200
     }
     // buttonTrue: {
