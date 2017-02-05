@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>APPL</string>
 	<key>NSLocationAlwaysUsageDescription</key>
-	<string>Geoloc</string>
+	<string>We only run a single check, once, to get your closest airport.</string>
 	<key>CFBundleShortVersionString</key>
 	<string>1.0</string>
 	<key>CFBundleSignature</key>

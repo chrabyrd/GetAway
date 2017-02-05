@@ -9,8 +9,16 @@ class Home extends Component {
     this.state = {
       flights: [],
       returnDate: "",
-      departAirport: "JFK",
+      nearestAirport: "",
     };
+  }
+
+  componentDidMount() {
+    this.props.fetchClosestAirport();
+  }
+
+  componentWillReceiveProps(newProps) {
+    this.state.nearestAirport = newProps.nearestAirport.code;
   }
 
   handleSubmit() {
@@ -20,7 +28,7 @@ class Home extends Component {
       leaveDate.setHours(leaveDate.getHours() + i);
       leaveDate = leaveDate.toJSON().slice(0,10);
 
-      this.props.fetchFlights(this.state.departAirport, leaveDate, this.state.returnDate);
+      this.props.fetchFlights(this.state.nearestAirport, leaveDate, this.state.returnDate);
     }
 
     this.props.receiveDate(this.state.returnDate);
