@@ -90,6 +90,13 @@ class FlightIndex extends Component {
     this.props.redirectToPage(this.props.nearestAirport.code, flight["Arrival Airport"], flight["Departure Date"], this.state.returnDate);
   }
 
+  searchLink() {
+    this.setState({ visible: true });
+    this.props.navigator.push({
+      name: 'Home'
+    });
+  }
+
   _renderFlightRow(flight) {
     return (
       <TouchableHighlight onPress={ () => this.handlePress(flight) }>
@@ -111,6 +118,9 @@ class FlightIndex extends Component {
 
     return (
       <View style={styles.container}>
+        <TouchableHighlight onPress={ () => this.searchLink() }>
+          <Text style={styles.backButton}>Back To Search</Text>
+        </TouchableHighlight>
 
         <ListView
           style={{marginTop: 40}}
@@ -118,6 +128,7 @@ class FlightIndex extends Component {
           enableEmptySections={true}
           renderRow={flight => (this._renderFlightRow(flight))}
         />
+
         <Spinner visible={this.state.visible}
                 textContent={"Loading..."}
                 textStyle={{color: '#FFF'}} />
@@ -132,11 +143,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#EAE7F2'
-  },
-  button: {
-    borderWidth: 1,
-    backgroundColor: '#9ad3de'
+    backgroundColor: '#F5FCFF'
   },
   name: {
     flex: 1,
@@ -147,8 +154,8 @@ const styles = StyleSheet.create({
   flightRow: {
     padding: 20,
     flexDirection: 'column',
-    borderBottomWidth: 2,
-    borderBottomColor: '#935AA4',
+    borderBottomWidth: 1,
+    borderBottomColor: '#dcdcdc'
   },
   itin: {
     flex: 1,
@@ -161,12 +168,15 @@ const styles = StyleSheet.create({
   },
   place: {
     fontFamily: 'IowanOldStyle-Bold',
-    color: '#534591',
+    color: 'slategray',
     paddingRight: 100
   },
   price: {
     fontFamily: 'IowanOldStyle-Bold',
     color: 'slategray'
+  },
+  backButton: {
+    paddingTop: 40
   }
 
 });
