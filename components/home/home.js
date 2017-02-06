@@ -66,6 +66,7 @@ class Home extends Component {
         source={require('../../assets/images/clouds.jpg')}
         >
         <Text style={styles.logo}>GetAway</Text>
+
         <View style={styles.inputs}>
           <DatePicker
             style={styles.date}
@@ -87,7 +88,10 @@ class Home extends Component {
               dateInput: {
                 marginLeft: 36,
                 borderWidth: 0
-              }
+              },
+              placeholderText: {
+                color: 'white'
+              },
             }}
             onDateChange={(date) => {this.setState({returnDate: date});}}
           />
@@ -113,10 +117,10 @@ class Home extends Component {
       width: null,
       height: null
     },
-      inputs: {
-        flex: 1,
-        flexDirection: 'column',
-        justifyContent: 'center'
+    inputs: {
+      flex: 1,
+      flexDirection: 'column',
+      justifyContent: 'center'
     },
     buttonDisabled: {
       margin: 5,
@@ -129,7 +133,7 @@ class Home extends Component {
       borderRadius: 5,
       borderColor: '#63676d',
       backgroundColor: '#70747a',
-      opacity: .5
+      opacity: .7
     },
     button: {
       margin: 5,
@@ -146,7 +150,7 @@ class Home extends Component {
       borderBottomColor: '#538cc6',
       borderRightColor: '#538cc6',
       backgroundColor: '#609CDA',
-      opacity: 1
+      opacity: .8
     },
     buttonText: {
       color: 'white',
@@ -162,11 +166,10 @@ class Home extends Component {
       fontFamily: 'Papyrus'
     },
     date: {
-      backgroundColor: '#EAE7F2',
+      backgroundColor: 'rgba(112, 116, 122, 0.7)',
       borderColor: 'gray',
       borderWidth: 1,
       borderRadius: 5,
-      // marginTop:  0,
       width: 200
     }
   });

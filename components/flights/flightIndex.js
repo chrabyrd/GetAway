@@ -126,34 +126,62 @@ class FlightIndex extends Component {
     return (
       <TouchableHighlight onPress={ () => this.handlePress(flight) }>
         <View style={styles.flightRow}>
+
           <View style={styles.name}>
-            <Text style={styles.place}>{flight["Arrival City"]}, {flight["Arrival Country"]}</Text>
+            <View style={styles.placeContainer}>
+              <Text style={styles.place}>
+                {flight["Arrival City"]}
+              </Text>
+              <Text style={styles.place}>
+                {flight["Arrival Country"]}
+              </Text>
+            </View>
             <Text style={styles.price}>${flight["Price"]}</Text>
           </View>
-           <View style={styles.itin}>
-             <Text style={styles.itinText}>{flight["Departure Airport"]}  ----->  {flight["Arrival Airport"]}  {flight["Departure Date"]}</Text>
-             <Text style={styles.itinText}>{flight["Arrival Airport"]}  ----->  {flight["Departure Airport"]}  {flight["Return Date"]}</Text>
+
+           <View style={styles.itinContainer}>
+             <View style={styles.itin}>
+               <Text style={styles.itinText}>Leave</Text>
+               <Text style={styles.itinText}>{flight["Departure Date"].slice(5, 10)}</Text>
+             </View>
+             <View style={styles.itin}>
+               <Text style={styles.itinText}>From</Text>
+               <Text style={styles.itinText}>{flight["Departure Airport"]}</Text>
+             </View>
+             <View style={styles.itin}>
+               <Text style={styles.itinText}>To</Text>
+               <Text style={styles.itinText}>{flight["Arrival Airport"]}</Text>
+             </View>
+             <View style={styles.itin}>
+               <Text style={styles.itinText}>Return</Text>
+               <Text style={styles.itinText}>{this.state.returnDate.slice(5, 10)}</Text>
+             </View>
            </View>
+
         </View>
       </TouchableHighlight>
     );
   }
 
   render() {
+    console.log(this.state);
     return (
       <View style={styles.container}>
-        <TouchableHighlight style={styles.backButton}
-                            onPress={ () => this.searchLink() }>
-          <Text style={styles.backText}>Back To Search</Text>
-        </TouchableHighlight>
         <ListView
           style={{marginTop: 40}}
           dataSource={this.state.dataSource}
           renderRow={flight => (this._renderFlightRow(flight))}
         />
+
         <Spinner visible={this.state.visible}
                 textContent={"Loading..."}
-                textStyle={{color: '#FFF'}} />
+                textStyle={{color: '#FFF'}}
+        />
+
+      <TouchableHighlight style={styles.backButton}
+                          onPress={ () => this.searchLink() }>
+        <Text style={styles.backText}>Back To Search</Text>
+      </TouchableHighlight>
       </View>
     );
   }
@@ -162,44 +190,83 @@ class FlightIndex extends Component {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
+    flexDirection: 'column',
+    margin: 5,
+    padding: 5,
     justifyContent: 'center',
-    alignItems: 'center',
     backgroundColor: '#F5FCFF'
   },
   name: {
     flex: 1,
     flexDirection: 'row',
-    justifyContent: 'space-between',
-
+    margin: 5,
+    // backgroundColor: "orange",
   },
   flightRow: {
-    padding: 20,
+    margin: 5,
+    padding: 5,
+    alignSelf: 'stretch',
     flexDirection: 'column',
     borderBottomWidth: 1,
-    borderBottomColor: '#dcdcdc'
+    borderBottomColor: '#dcdcdc',
+    // backgroundColor: "red",
+  },
+  itinContainer: {
+    flex: 1,
+    flexDirection: 'row',
+    margin: 5,
+    padding: 5,
+    alignItems: 'center',
+    // backgroundColor: "blue",
   },
   itin: {
     flex: 1,
+    margin: 5,
     alignItems: 'center',
-    paddingTop: 15
-
+    // backgroundColor: "grey",
   },
   itinText: {
+    margin: 5,
+    marginTop: 0,
+    padding: 5,
+    paddingTop: 0,
+    paddingBottom: 0,
     fontFamily: 'Iowan Old Style',
-    color: 'slategray'
+    color: 'slategray',
+    // backgroundColor: "green",
+  },
+  placeContainer: {
+    flex: 1,
+    margin: 5,
+    padding: 5,
+    // backgroundColor: "peru",
   },
   place: {
+    flex: 1,
+    margin: 5,
+    padding: 5,
+    paddingTop: 0,
+    marginTop: 0,
     fontFamily: 'IowanOldStyle-Bold',
+    fontSize: 22,
     color: 'slategray',
-    paddingRight: 100
+    // backgroundColor: "pink",
   },
   price: {
+    margin: 5,
+    padding: 5,
     fontFamily: 'IowanOldStyle-Bold',
-    color: '#609CDA'
+    fontSize: 26,
+    justifyContent: 'center',
+    color: '#609CDA',
+    // backgroundColor: "ghostwhite",
   },
   backButton: {
+    margin: 5,
+    padding: 5,
     marginTop: 40,
     backgroundColor: '#609CDA',
+    // backgroundColor: "turquoise",
     paddingTop: 10,
     paddingBottom: 10,
     paddingRight: 20,
@@ -213,6 +280,8 @@ const styles = StyleSheet.create({
     borderRightColor: '#538cc6',
   },
   backText: {
+    margin: 5,
+    padding: 5,
     color: 'white',
     fontFamily: 'Trebuchet MS'
   }
