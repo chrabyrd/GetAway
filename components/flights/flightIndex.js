@@ -8,6 +8,7 @@ import {
   TouchableHighlight,
   ListView
 } from 'react-native';
+import Spinner from 'react-native-loading-spinner-overlay';
 
 class FlightIndex extends Component {
   constructor(props) {
@@ -22,7 +23,14 @@ class FlightIndex extends Component {
       dataSource: dataSource,
       weather: "",
       gotWeather: false
+      visible: false
     };
+  }
+
+  componentDidMount() {
+    this.setState({
+      visible: true
+    });
   }
 
   componentWillReceiveProps(newProps) {
@@ -104,6 +112,13 @@ class FlightIndex extends Component {
     this.props.redirectToPage(this.props.nearestAirport.code, flight["Arrival Airport"], flight["Departure Date"], this.state.returnDate);
   }
 
+  searchLink() {
+    this.setState({ visible: true });
+    this.props.navigator.push({
+      name: 'Home'
+    });
+  }
+
   _renderFlightRow(flight) {
     return (
       <TouchableHighlight onPress={ () => this.handlePress(flight) }>
@@ -122,14 +137,20 @@ class FlightIndex extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <View style={styles.container}>
+        <TouchableHighlight style={styles.backButton}
+                            onPress={ () => this.searchLink() }>
+          <Text style={styles.backText}>Back To Search</Text>
+        </TouchableHighlight>
         <ListView
           style={{marginTop: 40}}
           dataSource={this.state.dataSource}
           renderRow={flight => (this._renderFlightRow(flight))}
         />
+        <Spinner visible={this.state.visible}
+                textContent={"Loading..."}
+                textStyle={{color: '#FFF'}} />
       </View>
     );
   }
@@ -140,11 +161,7 @@ const styles = StyleSheet.create({
     flex: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    backgroundColor: '#EAE7F2'
-  },
-  button: {
-    borderWidth: 1,
-    backgroundColor: '#9ad3de'
+    backgroundColor: '#F5FCFF'
   },
   name: {
     flex: 1,
@@ -155,12 +172,13 @@ const styles = StyleSheet.create({
   flightRow: {
     padding: 20,
     flexDirection: 'column',
-    borderBottomWidth: 2,
-    borderBottomColor: '#935AA4',
+    borderBottomWidth: 1,
+    borderBottomColor: '#dcdcdc'
   },
   itin: {
     flex: 1,
     alignItems: 'center',
+    paddingTop: 15
 
   },
   itinText: {
@@ -169,12 +187,31 @@ const styles = StyleSheet.create({
   },
   place: {
     fontFamily: 'IowanOldStyle-Bold',
-    color: '#534591',
+    color: 'slategray',
     paddingRight: 100
   },
   price: {
     fontFamily: 'IowanOldStyle-Bold',
-    color: 'slategray'
+    color: '#609CDA'
+  },
+  backButton: {
+    marginTop: 40,
+    backgroundColor: '#609CDA',
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingRight: 20,
+    paddingLeft: 20,
+    borderRadius: 4,
+    borderTopWidth: 0,
+    borderLeftWidth: 0,
+    borderBottomWidth: 1,
+    borderRightWidth: 1,
+    borderBottomColor: '#538cc6',
+    borderRightColor: '#538cc6',
+  },
+  backText: {
+    color: 'white',
+    fontFamily: 'Trebuchet MS'
   }
 
 });
