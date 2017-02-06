@@ -89,7 +89,7 @@ class FlightIndex extends Component {
               style={{width: 50, height: 50}}
               source={{uri: `http://openweathermap.org/img/w/${forecast[0][1]}.png`}}
               />
-            <Text style={styles.itinText}>{forecast[0][2]}</Text>
+            <Text style={styles.itinText}>{forecast[0][2]} °F</Text>
           </View>
 
           <View style={styles.weather}>
@@ -98,7 +98,7 @@ class FlightIndex extends Component {
               style={{width: 50, height: 50}}
               source={{uri: `http://openweathermap.org/img/w/${forecast[1][1]}.png`}}
             />
-          <Text style={styles.itinText}>{forecast[1][2]}</Text>
+          <Text style={styles.itinText}>{forecast[1][2]} °F</Text>
           </View>
 
           <View style={styles.weather}>
@@ -107,7 +107,7 @@ class FlightIndex extends Component {
               style={{width: 50, height: 50}}
               source={{uri: `http://openweathermap.org/img/w/${forecast[2][1]}.png`}}
             />
-          <Text style={styles.itinText}>{forecast[2][2]}</Text>
+          <Text style={styles.itinText}>{forecast[2][2]} °F</Text>
           </View>
 
           <View style={styles.weather}>
@@ -116,7 +116,7 @@ class FlightIndex extends Component {
               style={{width: 50, height: 50}}
               source={{uri: `http://openweathermap.org/img/w/${forecast[3][1]}.png`}}
             />
-          <Text style={styles.itinText}>{forecast[3][2]}</Text>
+          <Text style={styles.itinText}>{forecast[3][2]} °F</Text>
           </View>
 
           <View style={styles.weather}>
@@ -125,7 +125,7 @@ class FlightIndex extends Component {
               style={{width: 50, height: 50}}
               source={{uri: `http://openweathermap.org/img/w/${forecast[4][1]}.png`}}
             />
-          <Text style={styles.itinText}>{forecast[4][2]}</Text>
+          <Text style={styles.itinText}>{forecast[4][2]} °F</Text>
           </View>
 
         </View>
@@ -232,7 +232,6 @@ class FlightIndex extends Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <View style={styles.container}>
         <ListView
