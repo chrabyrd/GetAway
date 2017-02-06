@@ -39,13 +39,12 @@ class Home extends Component {
     this.props.navigator.push({
       name: 'FlightIndex'
     });
-
   }
 
   render() {
 
     let minReturnDate = new Date();
-    minReturnDate.setDate(minReturnDate.getDate() + 5);
+    minReturnDate.setDate(minReturnDate.getDate() + 3);
 
     let maxReturnDate = new Date();
     maxReturnDate.setDate(maxReturnDate.getDate() + 120);

@@ -19,18 +19,43 @@ class FlightIndex extends Component {
       places: "",
       returnDate: "",
       indexFlightInfo: "",
-      dataSource: dataSource
+      dataSource: dataSource,
+      weather: "",
+      gotWeather: false
     };
   }
 
   componentWillReceiveProps(newProps) {
+    // Flights
     newProps.flightIndex.Quotes.forEach(quote => {
       this.state.quotes.push(quote);
     });
     this.state.places = newProps.flightIndex.Places;
     this.state.returnDate = newProps.returnDate;
     this.parseIndexDetails();
+    // Render
     this.setState({ dataSource: this.state.dataSource.cloneWithRows( this.state.indexFlightInfo ) });
+    // Weather
+    this.getWeather();
+    this.state.weather = newProps.weather;
+    this.incorporateWeather();
+  }
+
+  getWeather() {
+    if(!this.state.gotWeather) {
+      this.state.indexFlightInfo.forEach(function(obj){
+        this.props.getForecast(obj["Arrival City"], obj["Arrival Country"]);
+      }, this);
+    }
+    this.state.gotWeather = true;
+  }
+
+  incorporateWeather() {
+    this.state.indexFlightInfo.map(function(obj){
+      let rObj = obj;
+      rObj["weather"] = this.state.weather[obj["Arrival City"]];
+      return rObj;
+    }, this);
   }
 
   parseIndexDetails() {
@@ -53,15 +78,17 @@ class FlightIndex extends Component {
         let departDate = this.state.quotes[i].OutboundLeg.DepartureDate;
         let returnDate = this.state.quotes[i].InboundLeg.DepartureDate;
         let minPrice = this.state.quotes[i].MinPrice;
+        let foundOrigin = this.state.places.find(findOrigin);
+        let foundDestination = this.state.places.find(findDestination);
 
-        if (this.state.places.find(findOrigin) && this.state.places.find(findDestination)) {
+        if (foundOrigin && foundDestination) {
           info.push({
-            "Departure City": this.state.places.find(findOrigin).CityName,
-            "Departure Country": this.state.places.find(findOrigin).CountryName,
-            "Departure Airport": this.state.places.find(findOrigin).SkyscannerCode,
-            "Arrival City": this.state.places.find(findDestination).CityName,
-            "Arrival Country": this.state.places.find(findDestination).CountryName,
-            "Arrival Airport": this.state.places.find(findDestination).SkyscannerCode,
+            "Departure City": foundOrigin.CityName,
+            "Departure Country": foundOrigin.CountryName,
+            "Departure Airport": foundOrigin.SkyscannerCode,
+            "Arrival City": foundDestination.CityName,
+            "Arrival Country": foundDestination.CountryName,
+            "Arrival Airport": foundDestination.SkyscannerCode,
             "Departure Date": departDate.slice(0, 10),
             "Price": minPrice
           });
@@ -95,17 +122,14 @@ class FlightIndex extends Component {
   }
 
   render() {
-
+    console.log(this.state);
     return (
       <View style={styles.container}>
-
         <ListView
           style={{marginTop: 40}}
           dataSource={this.state.dataSource}
-          enableEmptySections={true}
           renderRow={flight => (this._renderFlightRow(flight))}
         />
-
       </View>
     );
   }
