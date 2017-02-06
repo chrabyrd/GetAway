@@ -262,14 +262,13 @@ const styles = StyleSheet.create({
     margin: 5,
     padding: 5,
     justifyContent: 'center',
-    backgroundColor: '#F5FCFF'
+    backgroundColor: '#F5FCFF',
   },
   name: {
     flex: 1,
     flexDirection: 'row',
     margin: 5,
     justifyContent: 'space-between',
-    // backgroundColor: "orange",
   },
   flightRow: {
     margin: 5,
@@ -278,19 +277,16 @@ const styles = StyleSheet.create({
     flexDirection: 'column',
     borderBottomWidth: 1,
     borderBottomColor: '#dcdcdc',
-    // backgroundColor: "red",
   },
   weatherContainer: {
     margin: 5,
     padding: 5,
-    // backgroundColor: 'lightblue',
   },
   weather: {
     margin: 1,
     padding: 1,
     justifyContent: 'center',
     alignItems: 'center',
-    // backgroundColor: 'lightgreen',
   },
   weatherIndexContainer: {
     justifyContent: 'space-around',
@@ -298,7 +294,6 @@ const styles = StyleSheet.create({
     paddingTop: 2,
     marginBottom: 2,
     paddingBottom: 2,
-    // backgroundColor: 'gold',
     flexDirection: 'row',
   },
   itinContainer: {
@@ -307,13 +302,11 @@ const styles = StyleSheet.create({
     margin: 5,
     padding: 5,
     alignItems: 'center',
-    // backgroundColor: "blue",
   },
   itin: {
     flex: 1,
     margin: 5,
     alignItems: 'center',
-    // backgroundColor: "grey",
   },
   itinText: {
     margin: 5,
@@ -323,13 +316,11 @@ const styles = StyleSheet.create({
     paddingBottom: 0,
     fontFamily: 'Iowan Old Style',
     color: 'slategray',
-    // backgroundColor: "green",
   },
   placeContainer: {
     flex: 1,
     margin: 5,
     padding: 5,
-    // backgroundColor: "peru",
   },
   place: {
     flex: 1,
@@ -340,7 +331,6 @@ const styles = StyleSheet.create({
     fontFamily: 'IowanOldStyle-Bold',
     fontSize: 28,
     color: 'slategray',
-    // backgroundColor: "pink",
   },
   price: {
     margin: 5,
@@ -349,25 +339,12 @@ const styles = StyleSheet.create({
     fontSize: 26,
     justifyContent: 'center',
     color: '#609CDA',
-    // backgroundColor: "ghostwhite",
   },
   backButton: {
     margin: 5,
     padding: 5,
-    marginTop: 40,
-    backgroundColor: '#609CDA',
-    // backgroundColor: "turquoise",
-    paddingTop: 10,
-    paddingBottom: 10,
-    paddingRight: 20,
-    paddingLeft: 20,
-    borderRadius: 4,
-    borderTopWidth: 0,
-    borderLeftWidth: 0,
-    borderBottomWidth: 1,
-    borderRightWidth: 1,
-    borderBottomColor: '#538cc6',
-    borderRightColor: '#538cc6',
+    alignItems: 'center',
+    backgroundColor: 'rgba(96, 156, 218, .9)',
   },
   backText: {
     margin: 5,

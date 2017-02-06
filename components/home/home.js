@@ -92,6 +92,9 @@ class Home extends Component {
               placeholderText: {
                 color: 'white'
               },
+              dateText: {
+                color: 'white'
+              },
             }}
             onDateChange={(date) => {this.setState({returnDate: date});}}
           />
