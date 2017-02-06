@@ -22,7 +22,7 @@ class FlightIndex extends Component {
       indexFlightInfo: "",
       dataSource: dataSource,
       weather: "",
-      gotWeather: false
+      gotWeather: false,
       visible: false
     };
   }
@@ -43,6 +43,9 @@ class FlightIndex extends Component {
     this.parseIndexDetails();
     // Render
     this.setState({ dataSource: this.state.dataSource.cloneWithRows( this.state.indexFlightInfo ) });
+    this.setState({
+      visible: false
+    });
     // Weather
     this.getWeather();
     this.state.weather = newProps.weather;
