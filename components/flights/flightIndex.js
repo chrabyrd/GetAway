@@ -27,7 +27,7 @@ class FlightIndex extends Component {
 
   componentDidMount() {
     this.setState({
-      visible: !this.state.visible
+      visible: true
     });
   }
 
@@ -42,7 +42,7 @@ class FlightIndex extends Component {
     this.setState({ dataSource: this.state.dataSource.cloneWithRows( this.state.indexFlightInfo ) });
 
     this.setState({
-      visible: !this.state.visible
+      visible: false
     });
   }
 
