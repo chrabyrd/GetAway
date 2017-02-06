@@ -118,8 +118,9 @@ class FlightIndex extends Component {
 
     return (
       <View style={styles.container}>
-        <TouchableHighlight onPress={ () => this.searchLink() }>
-          <Text style={styles.backButton}>Back To Search</Text>
+        <TouchableHighlight style={styles.backButton}
+                            onPress={ () => this.searchLink() }>
+          <Text style={styles.backText}>Back To Search</Text>
         </TouchableHighlight>
 
         <ListView
@@ -160,6 +161,7 @@ const styles = StyleSheet.create({
   itin: {
     flex: 1,
     alignItems: 'center',
+    paddingTop: 15
 
   },
   itinText: {
@@ -173,10 +175,25 @@ const styles = StyleSheet.create({
   },
   price: {
     fontFamily: 'IowanOldStyle-Bold',
-    color: 'slategray'
+    color: '#609CDA'
   },
   backButton: {
-    paddingTop: 40
+    flex: 1,
+    alignItems: 'center',
+    marginTop: 40,
+    borderRadius: 4,
+    backgroundColor: '#609CDA',
+    paddingTop: 10,
+    paddingBottom: 10,
+    paddingRight: 20,
+    paddingLeft: 20,
+    height: 20
+  },
+  backText: {
+    color: 'white',
+    fontFamily: 'Trebuchet MS',
+
+    // fontSize: 20,
   }
 
 });

@@ -66,7 +66,7 @@ class Home extends Component {
       <Image style={styles.container}
         source={require('../../assets/images/clouds.jpg')}
         >
-        <Text style={styles.logo}>Leave Now</Text>
+        <Text style={styles.logo}>GetAway</Text>
         <View style={styles.inputs}>
           <DatePicker
             style={styles.date}
@@ -151,13 +151,16 @@ class Home extends Component {
     },
     buttonText: {
       color: 'white',
-      fontSize: 20
+      fontSize: 20,
+      // fontFamily: 'Optima'
+      fontFamily: 'Trebuchet MS'
     },
     logo: {
       fontSize: 60,
       marginTop: 140,
       backgroundColor: 'transparent',
-      color: 'white'
+      color: 'white',
+      fontFamily: 'Papyrus'
     },
     date: {
       backgroundColor: '#EAE7F2',
