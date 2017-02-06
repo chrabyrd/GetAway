@@ -170,35 +170,6 @@ class Home extends Component {
       // marginTop:  0,
       width: 200
     }
-    // buttonTrue: {
-    //   flex: .2,
-    //   margin: 5,
-    //   width: 375,
-    //   padding: 0,
-    //   justifyContent: 'center',
-    //   alignItems: 'center',
-    //   borderWidth: 2,
-    //   borderColor: '#dddae5',
-    //   backgroundColor: '#EAE7F2'
-    // },
-
-    // BudgetView: {
-    //   marginTop: 80,
-    //   height: 40
-    // },
-    // budget: {
-    //   padding: 0,
-    //   textAlign: 'right',
-    //   paddingRight: 10,
-    //   backgroundColor: '#EAE7F2',
-    //   flex: 1,
-    //   justifyContent: 'center',
-    //   borderColor: '#935AA4',
-    //   borderWidth: 3,
-    //   borderRadius: 10,
-    //   width: 200
-    // },
-
   });
 
 export default Home;

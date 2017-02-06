@@ -178,22 +178,23 @@ const styles = StyleSheet.create({
     color: '#609CDA'
   },
   backButton: {
-    flex: 1,
-    alignItems: 'center',
     marginTop: 40,
-    borderRadius: 4,
     backgroundColor: '#609CDA',
     paddingTop: 10,
     paddingBottom: 10,
     paddingRight: 20,
     paddingLeft: 20,
-    height: 20
+    borderRadius: 4,
+    borderTopWidth: 0,
+    borderLeftWidth: 0,
+    borderBottomWidth: 1,
+    borderRightWidth: 1,
+    borderBottomColor: '#538cc6',
+    borderRightColor: '#538cc6',
   },
   backText: {
     color: 'white',
-    fontFamily: 'Trebuchet MS',
-
-    // fontSize: 20,
+    fontFamily: 'Trebuchet MS'
   }
 
 });
