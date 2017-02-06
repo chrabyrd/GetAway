@@ -3,6 +3,7 @@ import { uniqBy, sortBy } from 'lodash';
 import {
   View,
   Text,
+  Image,
   StyleSheet,
   Navigator,
   TouchableHighlight,
@@ -67,6 +68,69 @@ class FlightIndex extends Component {
       rObj["weather"] = this.state.weather[obj["Arrival City"]];
       return rObj;
     }, this);
+  }
+
+  displayWeather(flight) {
+    if(flight.weather) {
+      let forecast = [];
+
+      flight.weather.data.forEach(day => {
+        let date = day.dt_txt.slice(5, 10);
+        let icon = day.weather[0].icon;
+        let temp = String(day.main.temp * (9 / 5) - 459.67).slice(0,2);
+        forecast.push([date, icon, temp]);
+      });
+
+      return (
+        <View style={styles.weatherIndexContainer}>
+          <View style={styles.weather}>
+            <Text style={styles.itinText}>{forecast[0][0]}</Text>
+            <Image
+              style={{width: 50, height: 50}}
+              source={{uri: `http://openweathermap.org/img/w/${forecast[0][1]}.png`}}
+              />
+            <Text style={styles.itinText}>{forecast[0][2]}</Text>
+          </View>
+
+          <View style={styles.weather}>
+            <Text style={styles.itinText}>{forecast[1][0]}</Text>
+            <Image
+              style={{width: 50, height: 50}}
+              source={{uri: `http://openweathermap.org/img/w/${forecast[1][1]}.png`}}
+            />
+          <Text style={styles.itinText}>{forecast[1][2]}</Text>
+          </View>
+
+          <View style={styles.weather}>
+            <Text style={styles.itinText}>{forecast[2][0]}</Text>
+            <Image
+              style={{width: 50, height: 50}}
+              source={{uri: `http://openweathermap.org/img/w/${forecast[2][1]}.png`}}
+            />
+          <Text style={styles.itinText}>{forecast[2][2]}</Text>
+          </View>
+
+          <View style={styles.weather}>
+            <Text style={styles.itinText}>{forecast[3][0]}</Text>
+            <Image
+              style={{width: 50, height: 50}}
+              source={{uri: `http://openweathermap.org/img/w/${forecast[3][1]}.png`}}
+            />
+          <Text style={styles.itinText}>{forecast[3][2]}</Text>
+          </View>
+
+          <View style={styles.weather}>
+            <Text style={styles.itinText}>{forecast[4][0]}</Text>
+            <Image
+              style={{width: 50, height: 50}}
+              source={{uri: `http://openweathermap.org/img/w/${forecast[4][1]}.png`}}
+            />
+          <Text style={styles.itinText}>{forecast[4][2]}</Text>
+          </View>
+
+        </View>
+      );
+    }
   }
 
   parseIndexDetails() {
@@ -139,24 +203,28 @@ class FlightIndex extends Component {
             <Text style={styles.price}>${flight["Price"]}</Text>
           </View>
 
-           <View style={styles.itinContainer}>
-             <View style={styles.itin}>
-               <Text style={styles.itinText}>Leave</Text>
-               <Text style={styles.itinText}>{flight["Departure Date"].slice(5, 10)}</Text>
-             </View>
-             <View style={styles.itin}>
-               <Text style={styles.itinText}>From</Text>
-               <Text style={styles.itinText}>{flight["Departure Airport"]}</Text>
-             </View>
-             <View style={styles.itin}>
-               <Text style={styles.itinText}>To</Text>
-               <Text style={styles.itinText}>{flight["Arrival Airport"]}</Text>
-             </View>
-             <View style={styles.itin}>
-               <Text style={styles.itinText}>Return</Text>
-               <Text style={styles.itinText}>{this.state.returnDate.slice(5, 10)}</Text>
-             </View>
-           </View>
+          <View style={styles.weatherContainer}>
+            <View>{this.displayWeather(flight)}</View>
+          </View>
+
+          <View style={styles.itinContainer}>
+            <View style={styles.itin}>
+              <Text style={styles.itinText}>Leave</Text>
+              <Text style={styles.itinText}>{flight["Departure Date"].slice(5, 10)}</Text>
+            </View>
+            <View style={styles.itin}>
+              <Text style={styles.itinText}>From</Text>
+              <Text style={styles.itinText}>{flight["Departure Airport"]}</Text>
+            </View>
+            <View style={styles.itin}>
+              <Text style={styles.itinText}>To</Text>
+              <Text style={styles.itinText}>{flight["Arrival Airport"]}</Text>
+            </View>
+            <View style={styles.itin}>
+              <Text style={styles.itinText}>Return</Text>
+              <Text style={styles.itinText}>{this.state.returnDate.slice(5, 10)}</Text>
+            </View>
+          </View>
 
         </View>
       </TouchableHighlight>
@@ -200,6 +268,7 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection: 'row',
     margin: 5,
+    justifyContent: 'space-between',
     // backgroundColor: "orange",
   },
   flightRow: {
@@ -210,6 +279,27 @@ const styles = StyleSheet.create({
     borderBottomWidth: 1,
     borderBottomColor: '#dcdcdc',
     // backgroundColor: "red",
+  },
+  weatherContainer: {
+    margin: 5,
+    padding: 5,
+    // backgroundColor: 'lightblue',
+  },
+  weather: {
+    margin: 1,
+    padding: 1,
+    justifyContent: 'center',
+    alignItems: 'center',
+    // backgroundColor: 'lightgreen',
+  },
+  weatherIndexContainer: {
+    justifyContent: 'space-around',
+    marginTop: 2,
+    paddingTop: 2,
+    marginBottom: 2,
+    paddingBottom: 2,
+    // backgroundColor: 'gold',
+    flexDirection: 'row',
   },
   itinContainer: {
     flex: 1,
@@ -248,7 +338,7 @@ const styles = StyleSheet.create({
     paddingTop: 0,
     marginTop: 0,
     fontFamily: 'IowanOldStyle-Bold',
-    fontSize: 22,
+    fontSize: 28,
     color: 'slategray',
     // backgroundColor: "pink",
   },
