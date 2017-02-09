@@ -8,12 +8,11 @@ While the market is already saturated with airline booking applications, the maj
 
 Using LeaveNow, users will be able to:
 
-- [ ] See a destination-agnostic list of round-trip international flights departing from their nearest airport within the next 12 hours,
-- [ ] Filter this list by price,
-- [ ] See a detailed view of specific information after selecting a trip,
-- [ ] Access an airline's booking page through this detailed view.
+- [ ] Use geolocation to find the user's closest airport.
+- [ ] Return a list of round-trip flights leaving from that airport in the next 24 hours.
+- [ ] Show a 5-day weather forecast for each destination.
+- [ ] Redirect users through an affiliate link to a site where they can book the flight of their choice.
 
-<<<<<<< HEAD
 ##WireFrames
 
 ![splash](docs/wireframes/Splash_load.png)
@@ -21,43 +20,39 @@ Using LeaveNow, users will be able to:
 ![Index](docs/wireframes/Index.png)
 ![Show Page](docs/wireframes/Show Page.png)
 
-##Technologies & Technical Challenges
-=======
 ## Technologies & Technical Challenges
 
 There will be three pages:
   - Splash/loading page
   - Home: receive user input
   - Flight Index: list of all relevant flights
-  - Flight Show: flight details
 
 The primary technical challenges will be:
   - Parsing the api data to display the relevant flights
   - Storing the search results in the state to limit api requests when viewing the details of different options
-  - Only displaying flights departing within the next 12 hours of the current time
+  - Only displaying flights departing within the next 24 hours of the current time
 
-The user will select a max price, return date, and airport. The app will send a request to the Skyscanner API (adding the current date and time). It will then parse the returned data to only include flights within the next 12 hours.
+The user will select a max price, return date, and airport. The app will send a request to the Skyscanner API (adding the current date and time). It will then parse the returned data to only include flights within the next 24 hours.
 
 ## Group Members & Work Breakdown
 
-Our group consists of three members: Craig Scott, Chris Bryd, Maria Belgrader
+Our group consists of two members: Chris Bryd, Maria Belgrader
 
 Each team member will be responsible for:
   - Researching and understanding the Skyscanner API
   - Selecting a splash/loading image and color palatte
 
-Craigs's primary responsibilities will be:
-  - Setting up the Skyscanner API
-  - Researching geolocation with Skyscanner (zipcode)
-  - Home page with styling
-
 Chris's primary responsibilities will be:
+  - Researching geolocation
+  - Setting up the API requests
   - Setting up the application state
-  - Show page with styling
 
 Maria's primary responsibilities will be:
   - Setting up pages and routes
+  - Splash and loading screens
   - Index page with styling
+  - Home page with styling
+  - Live site / App store
 
 ## Implementation Timeline
 
@@ -92,7 +87,6 @@ Maria's primary responsibilities will be:
   - Decide on bonus features and begin implementation
 
 **Bonus Features (TBD)**:
-  - [ ] Weather of destination
   - [ ] Geolocation to find all nearby airports
   - [ ] Optional no layover
   - [ ] Images of destination
