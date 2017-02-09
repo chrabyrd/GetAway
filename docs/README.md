@@ -15,10 +15,10 @@ Using LeaveNow, users will be able to:
 
 ##WireFrames
 
-![splash](docs/wireframes/Splash_load.png)
-![home screen](docs/wireframes/home screen.png)
-![Index](docs/wireframes/Index.png)
-![Show Page](docs/wireframes/Show Page.png)
+![splash](wireframes/Splash_load.png)
+![home screen](wireframes/home screen.png)
+![Index](wireframes/Index.png)
+![Show Page](wireframes/Show Page.png)
 
 ## Technologies & Technical Challenges
 
