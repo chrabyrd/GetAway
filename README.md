@@ -115,3 +115,5 @@ There are several features that will be added to this project in the future.
 - To make the more visually appealing, a Cesium globe could be incorporated.
 
 - The option for direct-only flights can be included.
+
+- Currently the app is iOS only. Android will be incorporated in the near future.
