@@ -59,8 +59,6 @@ class Home extends Component {
 
     let bool = this.state.returnDate !== "" ? false : true;
     let _buttonName = bool ? styles.buttonDisabled : styles.button;
-    // let _buttonText = bool ? require('../../assets/images/getFlyingGrey.png') :
-    //                           require('../../assets/images/getFlyingPurp.png');
   return (
       <Image style={styles.container}
         source={require('../../assets/images/clouds.jpg')}

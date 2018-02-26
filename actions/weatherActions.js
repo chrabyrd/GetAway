@@ -13,7 +13,7 @@ export const getForecast = (city, country) => dispatch => (
     .then(data => data.json())
     .then(data => (
       remove(data.list, function(obj) {
-        return obj.dt_txt.slice(11, 19) === "12:00:00";
+        return obj.dt_txt.slice(11, 19) === "15:00:00";
       })
     ))
     .then(data => {
