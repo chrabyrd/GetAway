@@ -70,6 +70,19 @@ class FlightIndex extends Component {
     }, this);
   }
 
+  displayDay(date, image, temp) {
+    return (
+      <View style={styles.weather}>
+        <Text style={styles.itinText}>{date}</Text>
+        <Image
+          style={{width: 50, height: 50}}
+          source={{uri: `http://openweathermap.org/img/w/${image}.png`}}
+          />
+        <Text style={styles.itinText}>{temp} °F</Text>
+      </View>
+    )
+  }
+
   displayWeather(flight) {
     if(flight.weather) {
       let forecast = [];
@@ -83,51 +96,11 @@ class FlightIndex extends Component {
 
       return (
         <View style={styles.weatherIndexContainer}>
-          <View style={styles.weather}>
-            <Text style={styles.itinText}>{forecast[0][0]}</Text>
-            <Image
-              style={{width: 50, height: 50}}
-              source={{uri: `http://openweathermap.org/img/w/${forecast[0][1]}.png`}}
-              />
-            <Text style={styles.itinText}>{forecast[0][2]} °F</Text>
-          </View>
-
-          <View style={styles.weather}>
-            <Text style={styles.itinText}>{forecast[1][0]}</Text>
-            <Image
-              style={{width: 50, height: 50}}
-              source={{uri: `http://openweathermap.org/img/w/${forecast[1][1]}.png`}}
-            />
-          <Text style={styles.itinText}>{forecast[1][2]} °F</Text>
-          </View>
-
-          <View style={styles.weather}>
-            <Text style={styles.itinText}>{forecast[2][0]}</Text>
-            <Image
-              style={{width: 50, height: 50}}
-              source={{uri: `http://openweathermap.org/img/w/${forecast[2][1]}.png`}}
-            />
-          <Text style={styles.itinText}>{forecast[2][2]} °F</Text>
-          </View>
-
-          <View style={styles.weather}>
-            <Text style={styles.itinText}>{forecast[3][0]}</Text>
-            <Image
-              style={{width: 50, height: 50}}
-              source={{uri: `http://openweathermap.org/img/w/${forecast[3][1]}.png`}}
-            />
-          <Text style={styles.itinText}>{forecast[3][2]} °F</Text>
-          </View>
-
-          <View style={styles.weather}>
-            <Text style={styles.itinText}>{forecast[4][0]}</Text>
-            <Image
-              style={{width: 50, height: 50}}
-              source={{uri: `http://openweathermap.org/img/w/${forecast[4][1]}.png`}}
-            />
-          <Text style={styles.itinText}>{forecast[4][2]} °F</Text>
-          </View>
-
+          { this.displayDay(forecast[0][0], forecast[0][1], forecast[0][2]) }
+          { this.displayDay(forecast[1][0], forecast[1][1], forecast[1][2]) }
+          { this.displayDay(forecast[2][0], forecast[2][1], forecast[2][2]) }
+          { this.displayDay(forecast[3][0], forecast[3][1], forecast[3][2]) }
+          { this.displayDay(forecast[4][0], forecast[4][1], forecast[4][2]) }
         </View>
       );
     }
