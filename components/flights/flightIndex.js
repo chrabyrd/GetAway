@@ -94,13 +94,33 @@ class FlightIndex extends Component {
         forecast.push([date, icon, temp]);
       });
 
+      let day_1_date = forecast[0] ? forecast[0][0] : null
+      let day_1_image = forecast[0] ? forecast[0][1] : null
+      let day_1_temp = forecast[0] ? forecast[0][2] : null
+
+      let day_2_date = forecast[1] ? forecast[1][0] : null
+      let day_2_image = forecast[1] ? forecast[1][1] : null
+      let day_2_temp = forecast[1] ? forecast[1][2] : null
+
+      let day_3_date = forecast[2] ? forecast[2][0] : null
+      let day_3_image = forecast[2] ? forecast[2][1] : null
+      let day_3_temp = forecast[2] ? forecast[2][2] : null
+
+      let day_4_date = forecast[3] ? forecast[3][0] : null
+      let day_4_image = forecast[3] ? forecast[3][1] : null
+      let day_4_temp = forecast[3] ? forecast[3][2] : null
+
+      let day_5_date = forecast[4] ? forecast[4][0] : null
+      let day_5_image = forecast[4] ? forecast[4][1] : null
+      let day_5_temp = forecast[4] ? forecast[4][2] : null
+
       return (
         <View style={styles.weatherIndexContainer}>
-          { this.displayDay(forecast[0][0], forecast[0][1], forecast[0][2]) }
-          { this.displayDay(forecast[1][0], forecast[1][1], forecast[1][2]) }
-          { this.displayDay(forecast[2][0], forecast[2][1], forecast[2][2]) }
-          { this.displayDay(forecast[3][0], forecast[3][1], forecast[3][2]) }
-          { this.displayDay(forecast[4][0], forecast[4][1], forecast[4][2]) }
+          { day_1_date == null ? null : this.displayDay(day_1_date, day_1_image, day_1_temp) }
+          { day_2_date == null ? null : this.displayDay(day_2_date, day_2_image, day_2_temp) }
+          { day_3_date == null ? null : this.displayDay(day_3_date, day_3_image, day_3_temp) }
+          { day_4_date == null ? null : this.displayDay(day_4_date, day_4_image, day_4_temp) }
+          { day_5_date == null ? null : this.displayDay(day_5_date, day_5_image, day_5_temp) }
         </View>
       );
     }
